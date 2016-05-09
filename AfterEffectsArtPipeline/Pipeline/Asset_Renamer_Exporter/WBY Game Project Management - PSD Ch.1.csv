@@ -1,0 +1,147 @@
+Issue 1 PSD Panel Tracker,,,,,,,,
+Panel,Shot,Version,M,Content,Status,Anim. Hours,Layers Conf.,Notes
+001_001_001,001_001_001,v2,,City,COLOR DONE,,Layers OK,
+001_001_002,001_001_002,,X,Trekking up the mountain,COLOR DONE,,Layers OK,
+001_001_003,001_001_003,,X,distant airship,COLOR DONE,,Layers OK,
+001_001_004,001_001_004,,X,Pushing guy over railing,COLOR DONE,,Layers OK,needle can rattle slightly as it rotates a touch towards E. Finger are fully animatable.
+001_001_005,001_001_005,,X,Fuel/mining station,COLOR DONE,,Layers OK,
+001_002_001,001_001_006,v2,X,Air battle,COLOR DONE,,Layers OK,"this is one of the most important panels, let Zach know if you think that something could be aditionally expanded or layered for a nice animation"
+001_002_002,001_001_007,,X,Low fuel gauge,COLOR DONE,,Layers OK,
+001_002_003,001_001_008,v2,X,The Judge,COLOR DONE,,Layers OK,Judge's arm layered
+001_002_004,001_001_009,v2,X,The Executioner,COLOR DONE,,Layers OK,look for v2 file.
+001_002_005,001_001_010,,,The Dawn flies towards sun,COLOR DONE,,Layers OK,
+ACTIVE SCENE,001_002_001,,,"Flying to ""The Peak""",3D SCENE,,,
+001_003_001,001_002_002,,,"Approaching ""The Peak""",COLOR DONE,,Layers OK,
+001_003_002,001_002_003,,,Cola ready to land,COLOR DONE,,Layers OK,
+001_003_003,001_002_004,,,Cola landed,COLOR DONE,,Layers OK,puppet wrapping animation for plane engine steam
+001_003_004,001_002_005,,,Cola & Critter walk to the bar,COLOR DONE,,Layers OK,"Cola and her legs layered. Critter and his limbs - layered. glowing light of the bar windows - layered. use a slow zoom in, or/and pan down of the cam."
+001_004_001,001_002_006,,X,Entering to bar,COLOR DONE,,Layers OK,"Cola and her legs are layered. light can flicker, barkeep's hand with a bottle can go up and down pouring drink, foreground objects layered as well as the drink in the glass."
+001_004_002,001_002_007,v2,X,OTS Cola to Bartender,COLOR DONE,,Layers OK,look up for v2. bartenders hand is layered. you can animate the texture of the light too if cam movement will be used.
+001_004_003,001_002_008,v3,X,Cola close,COLOR DONE,,Layers OK,look up for v3.
+001_004_004,001_002_009,,X,Bar people,COLOR DONE,,Layers OK,
+001_004_005,001_002_010,,X,Cola close,COLOR DONE,,Layers OK,
+001_004_006,001_002_011,,X,Critter close,COLOR DONE,,Layers OK,
+001_005_001,001_002_012,,,Poor Critter outside,COLOR DONE,,Layers OK,"start full frame and slow zoom on critter. Critters ear can be animated up and down lil bit, his tail and head too."
+001_005_002,001_002_013,,,Cola & Barkeep talk,COLOR DONE,,Layers OK,"Cola's arms and hands layered, bartender, his bottle, Critter's head and his tongue."
+001_005_003,001_002_014,,X,Barkeep close,COLOR DONE,,Layers OK,
+001_005_004,001_002_015,,X,Cola & Barkeep talk,COLOR DONE,,Layers OK,
+001_005_005,001_002_016,,X,Cola close,COLOR DONE,,Layers OK,
+001_005_006,001_002_017,v2,X,Cola & Barkeep talk,COLOR DONE,,Layers OK,
+001_005_007,001_002_018,,X,OTS Cola to Barkeep,COLOR DONE,,Layers OK,
+001_005_008,001_002_019,,X,Barkeep close,COLOR DONE,,Layers OK,
+001_006_001,001_002_020,,,Pointing at Tug,COLOR DONE,,Layers OK,
+001_006_002,001_002_021,,X,Cola whispers,COLOR DONE,,Layers OK,
+001_006_003,001_002_022,,X,Barkeep explains,COLOR DONE,,Layers OK,
+001_006_004,001_002_023,,X,Cola close,COLOR DONE,,Layers OK,
+001_006_005,001_002_024,,,Barkeep Leaves,COLOR DONE,,Layers OK,"layered: barkeep and his hand, foreground characters and Colas head, light above for animation. u can use layers for a short camera movement from left to right or othervise."
+001_006_006,001_002_025,,,Barkeep OTS remark,COLOR DONE,,Layers OK,
+001_006_007,001_002_026,,,Cola turns to Tug,COLOR DONE,,Layers OK,
+001_007_001,001_002_027,,X,Cola wiggling Tug's boot,COLOR DONE,,Layers OK,new multipanel
+001_007_002,001_002_028,,X,Tug looking down,COLOR DONE,,Layers OK,new multipanel
+001_007_003,001_002_029,,,Tug looks up,COLOR DONE,,Layers OK,"Tug's hand and hat layer goes up ant stretches up at the same time, like ~5%. zoom-in Tug and zoom-out bg (expand bg before doing that)"
+001_007_004,001_002_030,,X,Cola over Tug's boots,COLOR DONE,,Layers OK,use layered object for a shifting cam or a zoom-in/zoom-out
+001_007_005,001_002_031,,X,Tug profile,COLOR DONE,,Layers OK,
+001_007_006,001_002_032,,X,Cola close,COLOR DONE,,Layers OK,
+001_008_001,001_002_033,,X,OTS Tug,COLOR DONE,,Layers OK,Tug coul be walking OR a minimal zoom-in / zoom-out
+001_008_002,001_002_034,,X,"Tug stands up, talking to Cola",COLOR DONE,,Layers OK,cola moves her hand as she talks (up and down gesture)
+001_008_003,001_002_035,,X,Tug medium,COLOR DONE,,Layers OK,
+001_008_004,001_002_036,,X,Cola looks over shoulder,COLOR DONE,,Layers OK,
+001_008_005,001_002_037,,X,The bar,COLOR DONE,,Layers OK,
+001_008_006,001_002_038,,,"""I will"" shifty Tug",COLOR DONE,,Layers OK,
+001_009_001,001_002_039,,X,Tug leaves the bar,COLOR DONE,,Layers OK,"start multipanel. Layered: doors, Tug and his both hands, background."
+001_009_002,001_002_040,,X,Critter snorts,COLOR DONE,,Layers OK,multipanel
+001_009_003,001_002_041,,X,Cola intros Critter,COLOR DONE,,Layers OK,multipanel
+001_009_004,001_002_042,,,Tug offers hand to Critter,COLOR DONE,,Layers OK,
+001_009_005,001_002_043,,X,Critter chomps!,COLOR DONE,,Layers OK,Critters jaw and spit layered for animation
+001_009_006,001_002_044,,X,All leaving the bar,COLOR DONE,,Layers OK,"Cola and Critter are layered for animation, as well as their legs."
+001_010_001,001_002_045,,X,Long shot of plane,COLOR DONE,,Layers OK,"Tug and his leg is separated as well as Colas resting hand, Critter and his limbs."
+001_010_002,001_002_046,,X,OTS Tug to Cola on plane,COLOR DONE,,Layers OK,
+001_010_003,001_002_047,,X,Cola OTS close,COLOR DONE,,Layers OK,
+001_010_004,001_002_048,,X,Cola squatting on wing,COLOR DONE,,Layers OK,
+001_010_005,001_002_049,,X,Cola getting in the plane,COLOR DONE,,Layers OK,
+001_010_006,001_002_050,,X,Critter growls and Tug,COLOR DONE,,Layers OK,
+001_010_007,001_002_051,,X,Tug looks sidelong at Cola,COLOR DONE,,Layers OK,
+001_010_008,001_002_052,,X,Cola's Lips,COLOR DONE,,Layers OK,
+001_011_001,001_003_001,,,Cola's jet flying,COLOR DONE,,,
+001_011_002,001_003_002,v2,X,Tug loses his hat,COLOR DONE,,,"use speedlines and possibly moving bg textures to express fast movement. Tugs hand, two hats, his head and Critter's parts are separated for animation."
+001_011_003,001_003_003,,X,Cola's flying manuevers,COLOR DONE,,,"Cola's plane moves from right to left a couple inches. start with plane scaled down a bit and placed more on right, and make it go along the smoke trails."
+001_011_004,001_003_004,,X,Tug Middle,COLOR DONE,,,
+001_011_005,001_003_005,,,Cola's jet middle shot,COLOR DONE,,Layers OK,
+001_011_006,001_003_006,v2,,Cola's jet diving,COLOR DONE,,Layers OK,
+001_012_001,001_003_007,v2,,2-page spread of Dawn,COLOR DONE,2/25/2015,Layers OK,The pg 12/13 spread
+001_014_001,001_003_008,,,"Cola, Tug, Critter flying",COLOR DONE,2/23/2015,Layers OK,
+001_014_002,001_003_009,,,Cola close,COLOR DONE,,Layers OK,
+001_014_003,001_003_010,,,Tug Over-the-Shoulder,COLOR DONE,,Layers OK,
+001_014_003B,001_003_011,,,NEW ART - Tug at controls,COLOR DONE,,Layers OK,
+001_014_005,001_003_012,,X,Cola close,COLOR DONE,,Layers OK,
+001_014_006,001_003_013,,X,Cola clicks off the radio,COLOR DONE,2/25/2015,Layers OK,"Switch is fully animatable, along with hand."
+001_014_007,001_003_014,,X,Brick chased by wraith,COLOR DONE,2/25/2015,Layers OK,
+ACTIVE SCENE,001_003_015,,,ACTIVE SCENE,3D SCENE,,Layers OK,"Do we need more 2D art? Has 3D Cola jet, Wraith, and Brick jet"
+001_015_005,001_003_016,,,FaDoom explosion fly-away,COLOR DONE,,Layers OK,
+001_016_001,001_003_017,,X,Scram lands on wing,COLOR DONE,,Layers OK,
+001_016_002,001_003_018,,X,Scram close,COLOR DONE,,Layers OK,
+001_016_003B,001_003_019,v3,,NEW ART - Scram intro,COLOR DONE,,Layers OK,
+001_016_003C,001_003_020,,,NEW ART - Tug reaction,COLOR DONE,,Layers OK,
+001_016_004,001_003_021,,X,Handshake,COLOR DONE,,,
+001_016_005,001_003_022,,X,Cola face,COLOR DONE,,,
+001_016_006,001_003_023,,X,Scram goggles,COLOR DONE,,,
+001_017_001,001_003_024,,,Lace attacks an intruder,COLOR DONE,,,
+001_017_002,001_003_025,v2,,Cola flies past the Dawn,COLOR DONE,,," fight on the deck has some layered objects, like hand with sward and floating head n blood. glowing fire. layered background. window parts of Dawn falling down - layered."
+001_017_003,001_003_026,,,Scram leaves,COLOR DONE,,,"Tug's hands with sticks and thumbs layered. Scram has hair, jet wire amd his axe arm layered for anim. enlarge bg sky for animation."
+001_017_004,001_003_027,,,Scram faces a bad guy,COLOR DONE,,,right hand moves up and to the right as panel is animated. this will lead to the new panel
+001_017_004A,001_003_028,,,New Panel: Scram's arm rearing back with axe,COLOR DONE,,,axe is rearing back. blood trailing behind.
+001_017_005,001_003_029,,,Axe to face,COLOR DONE,,,
+001_018_001,001_003_030,,X,Scram kills bad guy,COLOR DONE,,,
+001_018_002,001_003_031,,X,Scram close,COLOR DONE,,,
+001_018_003,001_003_032,,X,Scram flies away,COLOR DONE,,,
+001_018_004,001_003_033,,X,Tug looks back,COLOR DONE,,,
+001_018_005,001_003_034,,X,Planes mid-range,COLOR DONE,,,
+001_018_006,001_003_035,,X,Firing (budda budda),COLOR DONE,,,"use the ""light"" layer on the plane to animate gun fire, as well as all the layers marked in green - make those enlarge and diminish in fast mode"
+001_018_007,001_003_036,,,The wraith gets away,COLOR DONE,,,"use all the space as needed, but focus on 16:9 format."
+001_019_001,001_003_037,,X,Tug close,COLOR DONE,,,
+001_019_002,001_003_038,,X,Cola close,COLOR DONE,,,
+001_019_003,001_003_039,,,Scram parachuting,COLOR DONE,,,"Scram's axe, jetpack wire, both legs and boots layered. patachute parts can wiggle. blood drops layered. cloud/sky textures layered for motion. dawn has it's fire glow on engines separated. use the splat behind Cola's jet as a wanishing layer of trail."
+001_019_004,001_003_040,,,Scram about to land on Cola's plane,COLOR DONE,,,use sky and zoomed in cam to depict the minor movement of plane. layered descending black dots could impove the action
+001_019_005,001_003_041,,,Scram lands on wing,COLOR DONE,,,"puppet wrapping anim for Scram's hair in wind. parachute swings on wires. make sky texture sink, multiply."
+001_019_006,001_003_042,,X,OTS Scram to Cola,COLOR DONE,,,puppet wrapping anim for Scram's hair. multiply sky textures for plane/sky movement.
+001_020_001,001_003_043,,X,Cola landing on The Dawn,COLOR DONE,,,use opacity animation for flame layers on the deck
+001_020_002,001_004_001,,,Olivia approaches Cola's plane,COLOR DONE,,,no longer multipanel.
+001_020_003,001_004_002,v2,,Olivia confronts Cola,COLOR DONE,,,look for v2 file.
+001_020_004,001_004_003,,,Angry Olivia,COLOR DONE,,,use speedlines and Olivia’s sideburns to express her anger. use space and compose as needed for frame.
+001_020_005,001_004_004,,X,Cola reaction,COLOR DONE,,,
+001_020_006,001_004_005,,X,Scram reaction,COLOR DONE,,,
+001_020_007,001_004_006,,X,Critter Reaction,COLOR DONE,,,
+001_020_008,001_004_007,,X,Tug reaction,COLOR DONE,,,
+001_021_001,001_004_008,,,wide shot from underCola's plane,COLOR DONE,,,Tugs leg moved down as he climbs off a plane. fire glow - layered. Cola moves her left feed as she nervously listen to her mother. clouds and sky - layered. plane and foreground objects layered for possible zoom-in/zoom-out
+001_021_002,001_004_009,,,"Cola dejected, close",COLOR DONE,,,
+001_021_003,001_004_010,,X,Olivia notices Tug,COLOR DONE,,,
+001_021_004,001_004_011,,X,Olivia intros self,COLOR DONE,,,Olivia pust out her hand
+001_021_005,001_004_012,,X,Tug shakes her hand,COLOR DONE,,,clouds move in the bg
+001_021_006,001_004_013,,X,Cola close profile,COLOR DONE,,,expand layer of Cola in case you'll decide to make her nod or something. hair are separated for animation as well.
+001_021_007,001_004_014,,X,Olivia leaves,COLOR DONE,,,"Olivia's limbs are layered (head, hands n legs) for a walk cycle animation. let us know if you need some fixing. Critter's tail, tongue and spit - layered. some grey ground dust textures and sky.. animate the sky to move in the opposit direction to Olivias walk, of course. Scran's hands and Colas head separated."
+001_022_001,001_004_015,,X,Cola and Scram,COLOR DONE,,,use layers for camera to tilt up or down a little. animate Critters tongue by stretching it. Scrams hand moves up/down. Cola can fix ger hat with alayered hand. extend clouds to animate their movement.
+001_022_002,001_004_016,,X,Scram comforts Cola,COLOR DONE,,,Scram's hand moves
+001_022_003,001_004_017,v2,X,Long overhead of crew on deck,COLOR DONE,,,look up for v2. Cola and Critter walk away. Cola could move up'n'down just a little as she makes her steps. Critter could move his tail.
+001_022_004,001_004_018,v2,,Tug and Scram,COLOR DONE,,,"Tug can move his hand up and down. Scram, can make a walking movement at some point, depending on dialogue."
+001_022_005,001_004_019,,X,Scram Close,COLOR DONE,,,
+001_022_006,001_004_020,,X,Tug close,COLOR DONE,,,
+001_022_007,001_004_021,,X,Tug OTS to Scram,COLOR DONE,,,
+001_023_001,001_004_022,,,Scram welcomes Tug to the Dawn,COLOR DONE,,,
+001_023_002,001_004_023,,,Scram and Tug walking toward plane,COLOR DONE,,,Skye and bg as well as Tug and Scram are Layered. Tug and Scram have their legs and arms available for movement. fire glowing - layered. enlarge bg sky to animate-move it
+001_023_003,001_004_024,,,The Dawn flies away,COLOR DONE,,,
+001_024_001,001_005_001,,,The Judge's fleet,COLOR DONE,,,"page 24/25 everything is layered and ready for motion. including the fighter on the left, it's hanging body ona wire and it's engine's fire - layered."
+001_024_002,001_005_002,,,Judge sunglasses,COLOR DONE,,,"page 24/25 a body attached to a plane is separated. green ambient light on Judge's face layered for possible glowing effect. all objects in the glasses are layered separately, underneath. multiple cloud / sky textures are layered to be animated / moved towards flying ship to creade depth. if Judge's bridge of the muzzle could be puppet-wrapped n animated as he talks, that would be amazing (just a thought for you guys)."
+001_024_003,001_005_003,v2,X,Lodge delivers some news,COLOR DONE,,,look up for v2. Lodge's writing hand and notepad can be animated. use all layers for a slow zoom-in or zoom-out effect.
+001_024_004,001_005_004,,X,OTS Lodge to Judge,COLOR DONE,,,page 24/25 - Lodge lowers down his clipboard and tilts his head up to judge. cam possibly zoom in to judge?
+001_024_005,001_005_005,v2,X,Judge walks away,COLOR DONE,,,"page 24/25 - Judges mech leg moves, he and his shadow scales down as he goes away"
+001_026_001,001_005_006,v2,X,Come in Captain,COLOR DONE,,,"look up for v2. pilot's head wiggles as he talks, camera zoom in (use eparated layers)"
+001_026_002,001_005_007,v2,X,long overhead of room,COLOR DONE,,,Lodges hand makes a small gesture as he talks. Judge's head can nod or make amovement from his desk to the person he talks.
+001_026_003,001_005_008,,,Judge push pins into map,COLOR DONE,,,hand and it's shadow are layered separately.
+001_026_004,001_005_009,,X,Judge medium,COLOR DONE,,,Judge moves his glass as he talks (a small gesture). could be enlarged for better movement in panel. sky moves slowly in bg
+001_026_005,001_005_010,,X,Pilot medium,COLOR DONE,,,slowly enlarge or reduce bg textures to provide depth. minimally.
+001_026_006,001_005_011,,X,Judge and pilot,COLOR DONE,,,judges hand with a glass could start shaking before trans to next panel (where he eventually crushes the glass)
+001_027_001,001_005_012,,,Smashes the glass,COLOR DONE,,,fingers can be animated. expand the layer with particles in animation. speedlines are layered.
+001_027_002,001_005_013,v2,,Judge punches,COLOR DONE,,,look up for v2. current position of the pilot is placed as final. rotate the figure for punch action - axis on Judges shoulder. some limbs and bg textures are layered for movement too.
+001_027_003,001_005_014,v2,X,Judge and fallen pilot,COLOR DONE,,,drink drops/pools can be expanded slowly in animation. Judge's hands layered. Filen pilot's head could shake a little (as in pain) or just roll in slowly.
+001_027_004,001_005_015,,X,Doctor tends to pilot,COLOR DONE,,,"background, pilot's torso and head layered. Doctor's head - layered. Judge has some blood drops walling off his glow. whiskey slump could enlarge slowly."
+001_027_005,001_005_016,,,Judge and Doctor,COLOR DONE,,,figures are layered as well as textures of lighting. Doctor has her hair bangs layered.

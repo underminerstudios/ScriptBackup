@@ -1,0 +1,244 @@
+
+/*** Generated through Lumonix shaderFX  by: norman.schaar in 3dsmax at: 24/04/2012 10:41:57  ***/ 
+
+// This FX shader was built to support FX Composer. 
+
+
+float LightmapIntensity
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "LightmapIntensity";
+> = 1.5;
+ 
+texture LightMap
+<
+	string ResourceName = "bs_lm_day.tga";
+	string UIName = "LightMap";
+	string ResourceType = "2D";
+>;
+ 
+sampler2D LightMapSampler = sampler_state
+{
+	Texture = <LightMap>;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	MipFilter = LINEAR;
+	AddressU = WRAP;
+	AddressV = WRAP;
+};
+ 
+texture Diffusemap
+<
+	string ResourceName = "grass_3_D.tga";
+	string UIName = "Diffusemap";
+	string ResourceType = "2D";
+>;
+ 
+sampler2D DiffusemapSampler = sampler_state
+{
+	Texture = <Diffusemap>;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	MipFilter = LINEAR;
+	AddressU = WRAP;
+	AddressV = WRAP;
+};
+ 
+float FresnelIntensity
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "FresnelIntensity";
+> = 1.5;
+ 
+float PatternMaskStrength
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "PatternMaskStrength";
+> = 4.0;
+ 
+float4x4 viewInv : ViewInverse < string UIWidget = "None"; >;  
+float FresnelMultiply
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "FresnelMultiply";
+> = 0.85;
+ 
+float DetailTile
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "DetailTile";
+> = 5.0;
+ 
+texture Detailmap
+<
+	string ResourceName = "grass_detail.tga";
+	string UIName = "Detailmap";
+	string ResourceType = "2D";
+>;
+ 
+sampler2D DetailmapSampler = sampler_state
+{
+	Texture = <Detailmap>;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	MipFilter = LINEAR;
+	AddressU = WRAP;
+	AddressV = WRAP;
+};
+ 
+
+// this function does the different types of light attenuation 
+float attenuation_func(int lightattenType, float4 lightAttenuation, float3 lightVec) 
+{ 
+	float att = 1.0; 
+	return att; 
+} 
+	 
+// this function does the different types of cone angle 
+float coneangle_func(int lightconeType, float lightHotspot, float lightFalloff, float3 lightVec, float3 lightDir) 
+{ 
+	float cone = 1.0; 
+	return cone; 
+} 
+
+/************** light info **************/ 
+
+float3 light1Dir : Direction 
+< 
+	string UIName = "Light 1 Direction"; 
+	string Object = "TargetLight"; 
+	string Space = "World"; 
+> = {100.0f, 100.0f, 100.0f}; 
+
+float3 light1Pos : POSITION 
+< 
+	string UIName = "Light 1 Position"; 
+	string Object = "PointLight"; 
+	string Space = "World"; 
+> = {100.0f, 100.0f, 100.0f}; 
+
+float4 light1Color : LIGHTCOLOR <string UIWidget = "Color"; > = { 1.0f, 1.0f, 1.0f, 1.0f}; 
+float4 light1Attenuation : Attenuation <string UIName = "Attenuation Settings"; > = { 1.0f, 1.0f, 1.0f, 1.0f}; 
+float light1Hotspot : HotSpot <string UIName = "Hot Spot Value"; > = { 43.0f }; 
+float light1Falloff : FallOff <string UIName = "Falloff Value"; > = { 45.0f }; 
+
+#define light1Type 1
+#define light1attenType 0
+#define light1coneType 0
+#define light1CastShadows false
+
+//---------------------------------- 
+
+float4x4 wvp : WorldViewProjection < string UIWidget = "None"; >;  
+float4x4 worldI : WorldInverse < string UIWidget = "None"; >;  
+// create the light vector 
+float3 lightVec_func(float3 worldSpacePos, float3 lightVector, float3x3 objTangentXf, int lightType) 
+{ 
+	float3 lightVec = mul(objTangentXf, (mul((lightVector - worldSpacePos), worldI).xyz)); 
+	return lightVec; 
+} 
+
+// input from application 
+	struct a2v { 
+	float4 position		: POSITION; 
+
+	float2 texCoord1	: TEXCOORD1; 
+	float2 texCoord		: TEXCOORD0; 
+	float4 tangent		: TANGENT; 
+	float4 binormal		: BINORMAL; 
+	float4 normal		: NORMAL; 
+
+}; 
+
+// output to fragment program 
+struct v2f { 
+        float4 position    		: POSITION; 
+
+	float2 texCoord1		: TEXCOORD0; 
+	float2 texCoord			: TEXCOORD1; 
+        float3 eyeVec	    	: TEXCOORD2; 
+
+}; 
+
+// Ambient Pass Vertex Shader: 
+v2f av(a2v In, uniform float3 lightPos, uniform int lightType, uniform float3 lightDir) 
+{ 
+	v2f Out = (v2f)0; 
+	Out.position = mul(wvp, In.position);				//transform vert position to homogeneous clip space 
+
+	Out.texCoord1 = In.texCoord1;						//pass through texture coordinates from channel 2 
+	Out.texCoord = In.texCoord;						//pass through texture coordinates from channel 1 
+	//this code was added by the Eye Vector Node 
+	float3x3 objTangentXf;								//build object to tangent space transform matrix 
+	#ifdef DCC_MAX	
+		objTangentXf[0] = In.binormal.xyz; 
+		objTangentXf[1] = -In.tangent.xyz; 
+		objTangentXf[2] = In.normal.xyz; 
+	#else
+		objTangentXf[0] = In.tangent.xyz;
+		objTangentXf[1] = In.binormal.xyz;
+		objTangentXf[2] = In.normal.xyz;
+	#endif 
+	//these three lines were added by the Eye Vector Node 
+	float4 osIPos = mul(worldI, float4(viewInv[0].w, viewInv[1].w, viewInv[2].w, viewInv[3].w));
+	float3 osIVec = osIPos.xyz - In.position.xyz;		//object space eye vector 
+	Out.eyeVec = mul(objTangentXf, osIVec);				//tangent space eye vector passed out 
+
+	return Out; 
+} 
+
+// Ambient Pass Pixel Shader: 
+float4 af(v2f In, uniform float3 lightDir, uniform float4 lightColor, uniform float4 lightAttenuation, uniform float lightHotspot, uniform float lightFalloff, uniform int lightType, uniform int lightattenType, uniform int lightconeType, uniform bool lightCastShadows, uniform int shadowPassCount) : COLOR 
+{ 
+
+	float4 LightMap = tex2D(LightMapSampler, In.texCoord1.xy);
+	float4 Diffusemap = tex2D(DiffusemapSampler, In.texCoord.xy);
+	float3 V = normalize(In.eyeVec.xyz);		//normalized eye vector 
+	float4 Normal = float4(0,0,1,0);	//tangent space normal vector 
+	float NdotV_fresnel = saturate(dot(V,Normal)); 		//clamped dot product 
+	float UIConst_7974 = 1.0; 
+	float UIConst_1911 = 2.2; 
+	float MathPow_2063 = pow(NdotV_fresnel,(UIConst_7974 / UIConst_1911));		//x to the power of y 
+	float UIConst_6133 = 0.0; 
+	float UIConst_9187 = 1.0; 
+	float MathClamp_2802 = clamp(((LightMap.a * PatternMaskStrength) + (MathPow_2063 * FresnelMultiply)), UIConst_6133, UIConst_9187); 
+	float3 MathLerp_2302 = lerp((Diffusemap.rgb * FresnelIntensity), (Diffusemap.rgb - LightMap.a), MathClamp_2802); 
+	float2 INUV_1328 = In.texCoord.xy; 
+	float4 Detailmap = tex2D(DetailmapSampler, (INUV_1328 * DetailTile).xy);
+	float UIConst_6480 = 2.0; 
+	float3 input1 = ((LightmapIntensity * LightMap.rgb) * ((MathLerp_2302 * Detailmap.rgb) * UIConst_6480)); 
+
+	float4 ret =  float4(input1, 1); 
+	return ret; 
+} 
+
+technique Complete  
+{  
+	pass ambient  
+    {		 
+		VertexShader = compile vs_2_0 av(light1Pos,  light1Type, light1Dir); 
+		ZEnable = true; 
+		ZWriteEnable = true; 
+		CullMode = cw; 
+		ShadeMode = Gouraud;
+		AlphaBlendEnable = false; 
+		AlphaTestEnable = FALSE; 
+		PixelShader = compile ps_2_0 af(light1Dir, light1Color, light1Attenuation, light1Hotspot, light1Falloff, light1Type, light1attenType, light1coneType, light1CastShadows, 1); 
+	}  
+
+}    

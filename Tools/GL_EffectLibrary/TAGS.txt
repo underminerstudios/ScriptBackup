@@ -1,0 +1,13 @@
+normal map
+diffuse
+spheremapping
+additive
+multiply
+lightmap
+grass
+transparency
+time
+flipbook
+animated
+fresnel
+eyevector

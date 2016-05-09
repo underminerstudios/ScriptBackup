@@ -1,0 +1,19 @@
+[SCENE LIGHTMAPPING SETUP]
+--------------------------
+Ok, I have my scene done and I want to bake some lightmaps with VRAY...
+What should I do?
+
+1) DIRECTX TRANSLATOR:
+If you're using some of our Custom-DirectX materials (DX-terrain-material or DX-asphalt-material) you should use this script first of all.
+Transform the DirectX Mats using the [DIRECTX to VRAY] option. (You can ignore this step if you're not using DirectX mats at all).
+
+2) VRAY TRANSLATOR:
+Then, we need to be sure that all the scene materials are VRAY materials only. (MultiSubObject Materials with VRAY materials are allowed too).
+Transform the materials using the [STANDARD to VRAY] option.
+
+3) BUMPMAP REPLACER:
+Finally we need to be sure that all the bumpmaps used in the scene are set as NORMALBUMPS.
+Transform all the scene bumpmaps checking the [NORMAPLBUMP] option.
+
+If everything has gone ok, now you should be able to render the scene lightmaps without problems.
+For more information about lightmapping please check the [VRAY: LIGHTMAPS & GAMMA SETUP] tutorial.

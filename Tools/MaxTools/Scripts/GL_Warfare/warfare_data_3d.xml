@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<folders>
+	<folder folder="M:\\data\\3d\\" />
+</folders>
+
+<objects>
+	<assets>
+		<asset gmapref="mapDustHelicoBlade" folder="objects\\helicopter\\" maxscene="helicopter_blade.max" reflist="MaterRptorHelico,Rotor,rotorblade"/>
+		<asset gmapref="" folder="" maxscene="" reflist=""/>
+		</assets>
+</objects>

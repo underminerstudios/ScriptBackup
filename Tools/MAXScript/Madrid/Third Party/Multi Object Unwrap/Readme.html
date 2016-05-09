@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0063)http://users.skynet.be/arketip/arketip_multiObjectUnwrapENG.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>multi Objects Unwrap</title>
+<meta name="keywords" content="multi Objects Unwrap, multiObjectsUnwrap, multi Object Unwrap, multiObjectUnwrap, maxscript">
+<meta name="description" content="multi Objects Unwrap allow to unwrap several objects at the same time, maxscript"><style type="text/css"></style></head>
+
+<body bgcolor="#edecea">
+
+<table border="0" cellpadding="0" cellspacing="0" width="672">
+  <!--DWLayoutTable-->
+  <tbody><tr> 
+    <td align="left" height="512" valign="top" width="672"><font color="#6c6a66" face="Trebuchet MS" size="2"> 
+      <div align="right"><img src="./Readme_files/redTri.gif" height="8" hspace="4" width="16">[toolbox]<br>
+        <hr>
+      </div>
+      </font>
+      <div align="left"><font color="#6c6a66" face="Trebuchet MS" size="2">multi 
+        Objects Unwrap &lt; <a href="http://www.arketip.be/index.php?id=20">download</a> 
+        &gt; version 2.10<br>
+        <br>
+        This script allows to unwrap* several objects at the same time.<br>
+        (*)edit UVW coordinates<br>
+        <br>
+        <img src="./Readme_files/multiObjectsUnwrap.gif" align="left" height="267" hspace="12" vspace="8" width="176"> 
+        Usage:<br>
+        1- Select the objects you want to unwrap and click on 'unwrap UV's' : 
+        edit them.<br>
+        2- When it's done click 'set UV's' ( don't forget ! ).<br>
+        <br>
+        Known limitations:<br>
+        - Only polys and meshes are supported (the other objects are converted 
+        to Poly or Mesh).<br>
+        - instance or reference objects could not work at this time. (untested)<br>
+        <br>
+        Options:<br>
+        - work on channel : the channel UV on which the script operates.<br>
+        - copied from : copy this channel as starting point (optional).<br>
+        - don't use Channel Info : don't use the Channel Info interface for the 
+        copy.<br>
+        - use previous unwrap: reuse the last 'Unwrap' modifier when It's possible.<br>
+        - convert to polys: converts the objects to editable poly. No undo available.<br>
+        <br>
+		<br>
+        Version history:<br>
+        2.10 - The Internal routines are completely rewritten. The reliability 
+        is increased in the special cases like the combination of several modifiers. 
+        It is a major update.<br>
+        2.03 to 2.06 - versions for the beta test<br>
+        <a href="http://users.skynet.be/arketip/maxscript/multiObjectsUnwrap131b.mcr">1.31b</a> 
+        - a new mode for welding mapVertices is added: 'break + clusters weld'. 
+        That avoid to weld mapVertices beetween clusters. That become the default 
+        mode.<br>
+        1.30b- Bugs were fixed when you use an another channel than the channel 
+        1.<br>
+        1.26b - A Cancel button is added.<br>
+        <br>
+        Installation of the macroscript:<br>
+        1. Click the MAXScript item in the Main Menu, select Run Script...<br>
+        2. Locate and select the script and press Open<br>
+        3. Go to Customize &gt; Customize User Interface and select the desired 
+        Tab (Keyboard, Toolbars, Quad or menu)<br>
+        4. Locate the category 'UVWtoolBox' under group 'Main UI'<br>
+        5. Search in the category for the name 'multiObjectsUnwrap'<br>
+        6. Drag the script to the toolbar, Menu, QuadMenu or assign to a Shortcut<br>
+        <br>
+        If you encounter bugs or problems that I am not aware of, please send 
+        me yours comments.<br>
+        Any suggestions are welcome.<br>
+        </font> 
+        <hr>
+        <font color="#6c6a66" face="Trebuchet MS" size="2"><img src="./Readme_files/navPrec.gif" align="left" height="16" hspace="8" vspace="2" width="16"><a href="http://users.skynet.be/arketip/arketipToolboxENG.htm">menu</a>
+		 | <a href="http://users.skynet.be/arketip/arketip_multiObjectUnwrap.htm">version française</a><br>
+        </font></div>
+    </td>
+  </tr>
+</tbody></table>
+</body></html>

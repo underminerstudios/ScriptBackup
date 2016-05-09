@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Network Share</title>
+<link rel="stylesheet" href="../../../ReadMeStyle.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="title">Network Share</div>
+<div id="author">author: Norman Schaar (norman.schaar@gameloft.com)</div>
+
+<ul class="info">
+<li>In order to be able to render your textures need to be accessible through the network first. This tool will allow you to do just that with a single click</li>
+
+<li>This tool will list all the files referenced by the 3dsMax scene. If the color is green it means the file has been found. If a file is red, it means it's not found.</li>
+<li>To ensure that the rendering works properly all files should be green. The script will still work if some textures are not found, but the result of the DR will not be fine.</li>
+<li>If something looks off in the render, chances are (at least 90% of the time) that one of the missing textures is causing the problem.</li>
+
+<li>If you change paths make sure to launch the tool again in order to refresh the list.</li>
+
+<li>Once all your paths are green you can click "Share".</li>
+<li>This will essentially, look for all the different folders used, and will share those folders in the network. It will also change the paths to the network paths, so that the nodes can access it.</li>
+
+<li style="color:#f00">WARNING ARTISTS:</li>
+<li style="color:#f00">Don't put textures in your Desktop folder, in drive root folders, system32 folder o any other crazy place you can think of... -_-'
+The script won't be able to share those folders!</li>
+<li>Make sure to click "UnShare" after you are done rendering.</li>
+</ul>
+</body>
+</html>

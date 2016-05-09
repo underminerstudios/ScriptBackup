@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>UVWUnwrapper</wiki>
+  <src>UVWUnwrapper.ms</src>
+  <toolTip>Replacement UVW Unwrapper for 3Ds Max. Samples the diffuse of the first ID on a multimaterial set up. If standard material is present  uses the diffuse of that file. If no material present doesn't use anything. </toolTip>
+  <displayName>UVW Unwrapper</displayName>
+  <category>UV_Tools</category>
+</data>

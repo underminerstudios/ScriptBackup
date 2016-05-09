@@ -1,0 +1,32 @@
+[VRAY: RENDER QUALITY]
+----------------------
+Before doing anything of the following steps I recommend you to set your GAMMA SETUP to 2.2 as it is indicate in the [VRAY: LIGHTMAPS & GAMMA SETUP] tutorial.
+Once you did this we can start configuring the V-RAY render setup:
+
+1) Open the render setup dialog and open the [IndirectIllumination] tab.
+2) Expand the [V-Ray:: Indirect Illumnination (GI)] rollout and enable the it.
+3) Change the secondary bounces to [Lightcache]
+
+DRAFT Setup (Fast):
+1) Expand the [V-Ray::Irradiance map] rollout:
+2) Set the current preset to [Custom]
+3) In the "basic parameters" set the [min rate] and the [max rate] to: -3. Check the [show calc. phase] too.
+4) Expand the [V-Ray::Light cache] rollout:
+5) Set the [subdivs:] to 250 and the [number of passes] to 8. Check the [show calc. phase] too.
+6) Now open the [Settings] tab and open the [V-Ray::DMC sampler]:
+7)Set the [Min Samples] to 4 and the [Global subdivs multiplier] to 1.0
+
+QUALITY Setup (Slow):
+1) Expand the [V-Ray::Irradiance map] rollout:
+2) Set the current preset to [Custom]
+3) In the "basic parameters" set the [min rate] to: -3 and the [max rate] to: 0. Check the [show calc. phase] too.
+4) Expand the [V-Ray::Light cache] rollout:
+5) Set the [subdivs:] to 1000 and the [number of passes] to 16. Set the [Sample size] to 0.01. Check the [show calc. phase] too.
+6) Now open the [Settings] tab and open the [V-Ray::DMC sampler]:
+7)Set the [Min Samples] to 32 and the [Global subdivs multiplier] to 1.2
+
+There are a lot of other variables that can change radically the quality and time spent in your renders (HDRI, photometric lights, VRay lights, material complexities...).
+My advice to keep everything simple and under control can be resumed in this 4 simple sentences:
+1) Do not use photometric lights or physical cameras (Unless you don't know perfectly how they work. They tend to mess the things quite quickly).
+2) Use always VrayShadows (not shadowmaps or anything else!)
+3) Do not use VrayLights unless you know EXACTLY what are you doing. They are formidable CPU/Render-Time eaters.

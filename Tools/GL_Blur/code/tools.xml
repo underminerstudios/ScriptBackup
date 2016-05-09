@@ -1,0 +1,524 @@
+<?xml version='1.0'?>
+<index>
+    <categories>
+
+            <category name="tools::Animation"/>
+            <category name="tools::Level_Editing_Tools"/>
+            <category name="Level_Editing_Tools"/>
+            <category name="MC4"/>
+            <category name="tools::Modeling_Tools">
+                <category name="tools::Modeling_Tools::Normals"/>
+                <category/>
+                <category name="tools::Modeling_Tools::UV_Tools"/>
+                <category name="UV_Tools"/>
+                <category name="tools::Modeling_Tools::Vertex_Color_Tools"/>
+                <category name="Vertex_Color_Tools"/>
+                <category name="tools::Modeling_Tools::Workflow"/>
+                <category name="Workflow"/>
+            </category>
+            <category name="tools::Projects">
+                <category name="tools::Projects::Asphalt">
+                    <category name="tools::Projects::Asphalt::MakePath"/>
+                    <category name="tools::Projects::Asphalt::TexConvert"/>
+                </category>
+                <category name="tools::Projects::Dungeon_Hunter">
+                    <category name="Dungeon Hunter::TexConvert"/>
+                </category>
+                <category/>
+                <category name="tools::Projects::MC4"/>
+                <category name="MC4"/>
+                <category name="Dungeon Hunter"/>
+            </category>
+            <category name="tools::Rendering_Tools">
+                <category name="tools::Rendering_Tools::Renderfarm"/>
+                <category name="Renderfarm"/>
+                <category name="tools::Rendering_Tools::Scanline"/>
+                <category name="Scanline"/>
+                <category name="tools::Rendering_Tools::Vray"/>
+                <category name="Vray"/>
+            </category>
+            <category name="tools::Utilities"/>
+            <category name="Utilities"/>
+            <category name="tools::Animation_Tools"/>
+            <category name="Animation"/>
+            <category/>
+            <category name="tools::Motion_Builder">
+                <category name="tools::Motion_Builder::Export"/>
+            </category>
+
+    </categories>
+    <tools>
+        <tool category="Level_Editing_Tools" loc="code\maxscript\tools\level_editing_tools\lodmaker\__meta__.xml" name="LODMaker">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>LODMaker</wiki>
+                <src>LODMaker.ms</src>
+                <toolTip>Creates LOD for you. You will probably need to adjust the LODs manually</toolTip>
+                <displayName>LOD Maker</displayName>
+                <category>Level_Editing_Tools</category>
+            </data>
+        </tool>
+        <tool category="MC4" loc="code\maxscript\tools\level_editing_tools\tagger\__meta__.xml" name="Tagger">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>Tagger</wiki>
+                <src>mc_tagger.ms</src>
+                <toolTip>Tags and untags selected object with a prefix</toolTip>
+                <displayName>MC4 Tagger</displayName>
+                <category>MC4</category>
+            </data>
+        </tool>
+        <tool category="tools::Modeling_Tools::Normals" loc="code\maxscript\tools\modeling_tools\_normals\spherizenormals\__meta__.xml" name="SpherizeNormals">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>SpherizeNormals</wiki>
+                <src>SpherizeNormals.ms</src>
+                <toolTip/>
+                <displayName>Spherize Normals</displayName>
+                <category/>
+            </data>
+        </tool>
+        <tool category="UV_Tools" loc="code\maxscript\tools\modeling_tools\_uv_tools\alignuvshells\__meta__.xml" name="AlignUVShells">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>AlingUVShells</wiki>
+                <src>AlignUVShells.ms</src>
+                <toolTip/>
+                <displayName>Align UV Shells</displayName>
+                <category>UV_Tools</category>
+            </data>
+        </tool>
+        <tool category="UV_Tools" loc="code\maxscript\tools\modeling_tools\_uv_tools\multiobject_unwrap\__meta__.xml" name="MultiObject_Unwrap">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>MutliObject_Unwrap</wiki>
+                <src>MultiObject_Unwrap.ms</src>
+                <toolTip/>
+                <displayName>Multi Object Unwrap</displayName>
+                <category>UV_Tools</category>
+            </data>
+        </tool>
+        <tool category="UV_Tools" loc="code\maxscript\tools\modeling_tools\_uv_tools\quadwall\__meta__.xml" name="QuadWall">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>QuadWallUV</wiki>
+                <src>QuadWallUV.ms</src>
+                <toolTip/>
+                <displayName>Quad Wall UV</displayName>
+                <category>UV_Tools</category>
+            </data>
+        </tool>
+        <tool category="UV_Tools" loc="code\maxscript\tools\modeling_tools\_uv_tools\setuvbackground\__meta__.xml" name="SetUVBackground">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>SetUVBackground</wiki>
+                <src>setUVBackground.py</src>
+                <toolTip/>
+                <displayName>Set UV Background</displayName>
+                <category>UV_Tools</category>
+            </data>
+        </tool>
+        <tool category="UV_Tools" loc="code\maxscript\tools\modeling_tools\_uv_tools\uv2corner\__meta__.xml" name="UV2Corner">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>UV2Corner</wiki>
+                <src>UV2Corner.ms</src>
+                <toolTip/>
+                <displayName>UV To Corner</displayName>
+                <category>UV_Tools</category>
+            </data>
+        </tool>
+        <tool category="UV_Tools" loc="code\maxscript\tools\modeling_tools\_uv_tools\uvaligntoedges\__meta__.xml" name="UVAlignToEdges">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>UVAlignToEdges</wiki>
+                <src>UVAlignToEdges.ms</src>
+                <toolTip>Aligns shells of all the selected edges to either be horizontal or vertical. Script is taken from TexTools and modified to loop through all the edges. 	</toolTip>
+                <displayName>UV Align To Edges</displayName>
+                <category>UV_Tools</category>
+            </data>
+        </tool>
+        <tool category="UV_Tools" loc="code\maxscript\tools\modeling_tools\_uv_tools\uvbinarytreepacker\__meta__.xml" name="UVBinaryTreePacker">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>UVBinaryTreePacker</wiki>
+                <src>UVBinaryTreePacker.ms</src>
+                <toolTip>Packs scene using binary tree and surface area</toolTip>
+                <displayName>UV Binary Tree Packer</displayName>
+                <category>UV_Tools</category>
+            </data>
+        </tool>
+        <tool category="UV_Tools" loc="code\maxscript\tools\modeling_tools\_uv_tools\uvwunwrapper\__meta__.xml" name="UVWUnwrapper">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>UVWUnwrapper</wiki>
+                <src>UVWUnwrapper.ms</src>
+                <toolTip>Replacement UVW Unwrapper for 3Ds Max. Samples the diffuse of the first ID on a multimaterial set up. If standard material is present  uses the diffuse of that file. If no material present doesn't use anything. </toolTip>
+                <displayName>UVW Unwrapper</displayName>
+                <category>UV_Tools</category>
+            </data>
+        </tool>
+        <tool category="Vertex_Color_Tools" loc="code\maxscript\tools\modeling_tools\_vertex_color_tools\vctoolbar\__meta__.xml" name="VCToolbar">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>VertexColorTools</wiki>
+                <src>VertexColorToolbar.ms</src>
+                <toolTip>Vertex Color Toolbar</toolTip>
+                <displayName>VC Toolbar</displayName>
+                <category>Vertex_Color_Tools</category>
+            </data>
+        </tool>
+        <tool category="Vertex_Color_Tools" loc="code\maxscript\tools\modeling_tools\_vertex_color_tools\vertexcolorist\__meta__.xml" name="VertexColorist">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>VertexColorist</wiki>
+                <src>VertexColorist.ms</src>
+                <toolTip/>
+                <displayName>Vertex Colorist</displayName>
+                <category>Vertex_Color_Tools</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\maxscript\tools\modeling_tools\_workflow\togglelocksrt\__meta__.xml" name="ToggleLockSRT">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>ToggleLockSRT</wiki>
+                <src>ToggleLockSRT.ms</src>
+                <toolTip>Toggles Scale Rotation Transformation on selected objects in the scene.</toolTip>
+                <displayName>Toggle Lock SRT</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\maxscript\tools\modeling_tools\_workflow\workingpivotset\__meta__.xml" name="WorkingPivotSet">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>WorkingPivotSet</wiki>
+                <src>WorkingPivotSet.ms</src>
+                <toolTip/>
+                <displayName>Working Pivot Set</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\maxscript\tools\modeling_tools\_workflow\workingpivottoggle\__meta__.xml" name="WorkingPivotToggle">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>WorkingPivotToggle</wiki>
+                <src>WorkingPivotToggle.ms</src>
+                <toolTip>Working Pivot Toggle</toolTip>
+                <displayName>Working Pivot Toggle</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="tools::Projects::Asphalt" loc="code\maxscript\tools\projects\_asphalt\a9_tools\__meta__.xml" name="A9_Tools">
+            <data version="1.0" type="Studiomax">
+                <icon>img/a9tools.png</icon>
+                <wiki>A9Tools</wiki>
+                <src>A9_Tools.ms</src>
+                <toolTip>Asphalt 9 Level Editing Toolset</toolTip>
+            </data>
+        </tool>
+        <tool category="tools::Projects::Asphalt" loc="code\maxscript\tools\projects\_asphalt\uvanimator\__meta__.xml" name="UVAnimator">
+            <data version="1.0" type="Studiomax">
+                <icon>img/a9tools.png</icon>
+                <wiki>A9UVAnimator</wiki>
+                <src>A9_uvanim.ms</src>
+                <toolTip>Asphalt 9 UV Animator Tool</toolTip>
+            </data>
+        </tool>
+        <tool category="tools::Projects::Dungeon_Hunter" loc="code\maxscript\tools\projects\_dungeon_hunter\makeassetpreview\__meta__.xml" name="MakeAssetPreview">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>MakeAssetPreview</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>Make Asset Preview</displayName>
+                <category/>
+            </data>
+        </tool>
+        <tool category="MC4" loc="code\maxscript\tools\projects\_mc4\lightmapper\__meta__.xml" name="Lightmapper">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>Lightmapper</wiki>
+                <src>LightMapper.ms</src>
+                <toolTip/>
+                <category>MC4</category>
+            </data>
+        </tool>
+        <tool category="MC4" loc="code\maxscript\tools\projects\_mc4\mc4toolbar\__meta__.xml" name="MC4Toolbar">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>MC4Toolbar</wiki>
+                <src>MC4_Toolbar.ms</src>
+                <toolTip>Toolbar established during MC4 production</toolTip>
+                <displayName>MC4 Toolbar</displayName>
+                <category>MC4</category>
+            </data>
+        </tool>
+        <tool category="Renderfarm" loc="code\maxscript\tools\rendering_tools\_renderfarm\dbr_scenesetup\__meta__.xml" name="DBR_SceneSetup">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>DBRSceneSetup</wiki>
+                <src>DBRSceneSetup.ms</src>
+                <toolTip/>
+                <displayName>DBR Scene Setup</displayName>
+                <category>Renderfarm</category>
+            </data>
+        </tool>
+        <tool category="Scanline" loc="code\maxscript\tools\rendering_tools\_scanline\omnilightmultiplier\__meta__.xml" name="OmniLightMultiplier">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>OmniLightMultiplier</wiki>
+                <src>OmniLightMultiplier.ms</src>
+                <toolTip/>
+                <displayName>Omni Light Multiplier</displayName>
+                <category>Scanline</category>
+            </data>
+        </tool>
+        <tool category="Vray" loc="code\maxscript\tools\rendering_tools\_vray\vraylightsubdivider\__meta__.xml" name="VrayLightSubdivider">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>VrayLightSubdivider</wiki>
+                <src>vray_light_subdivider.ms</src>
+                <toolTip/>
+                <displayName>Vray Light Subdivider</displayName>
+                <category>Vray</category>
+            </data>
+        </tool>
+        <tool category="Utilities" loc="code\maxscript\tools\utilities\libmaster\__meta__.xml" name="LibMaster">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>LibMaster</wiki>
+                <src>libmaster.ms</src>
+                <toolTip/>
+                <displayName>Lib Master</displayName>
+                <category>Utilities</category>
+            </data>
+        </tool>
+        <tool category="Animation" loc="code\python\tools\animation_tools\animationtagger\__meta__.xml" name="AnimationTagger">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>AnimationTagger</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>Animation Tagger</displayName>
+                <category>Animation</category>
+            </data>
+        </tool>
+        <tool category="Animation" loc="code\python\tools\animation_tools\atemp\__meta__.xml" name="ATemp">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>ATemp</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>A Temp</displayName>
+                <category/>
+            </data>
+        </tool>
+
+        <tool category="Level_Editing_Tools" loc="code\python\tools\level_editing_tools\assetmanager\__meta__.xml" name="AssetManager">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>AssetManager</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>Asset Manager</displayName>
+                <category/>
+            </data>
+        </tool>
+        <tool category="Level_Editing_Tools" loc="code\python\tools\level_editing_tools\levelgrunt\__meta__.xml" name="LevelGrunt">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>LevelGrunt</wiki>
+                <src>levelgruntdialog.py</src>
+                <toolTip/>
+                <displayName>Level Grunt</displayName>
+                <category>Level_Editing_Tools</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\python\tools\modeling_tools\_workflow\deleteemptynodes\__meta__.xml" name="DeleteEmptyNodes">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>DeleteEmptyNodes</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>Delete Empty Nodes</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\python\tools\modeling_tools\_workflow\isolatelayer\__meta__.xml" name="IsolateLayer">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>IsolateLayer</wiki>
+                <src>main.pyw</src>
+                <toolTip>Isolates layers based on selected objects</toolTip>
+                <displayName>Isolate Layer</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\python\tools\modeling_tools\_workflow\objectstofloor\__meta__.xml" name="ObjectsToFloor">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>ObjectsToFloor</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>Objects To Floor</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\python\tools\modeling_tools\_workflow\pivottocenterbottom\__meta__.xml" name="PivotToCenterBottom">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>PivotToCenterBottom</wiki>
+                <src>main.pyw</src>
+                <toolTip>Places pivot on the center bottom of the bounding box.</toolTip>
+                <displayName>Pivot To Center Bottom</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\python\tools\modeling_tools\_workflow\pivottosubobject\__meta__.xml" name="PivotToSubObject">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>PivotToSubObject</wiki>
+                <src>main.pyw</src>
+                <toolTip>Sets pivot to selected subobjectmode. If subobject not selected moves the pivot to center of object</toolTip>
+                <displayName>Pivot To SubObject</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\python\tools\modeling_tools\_workflow\selectionmerge\__meta__.xml" name="SelectionMerge">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>SelectionMerge</wiki>
+                <src>main.pyw</src>
+                <toolTip>Merges selected object in to one</toolTip>
+                <displayName>Sel Merge</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\python\tools\modeling_tools\_workflow\selectionseparate\__meta__.xml" name="SelectionSeparate">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>SelectionSeparate</wiki>
+                <src>main.pyw</src>
+                <toolTip>Separates selected objects</toolTip>
+                <displayName>Sel Separate</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="Workflow" loc="code\python\tools\modeling_tools\_workflow\superxfrom\__meta__.xml" name="SuperXFrom">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>SuperXFrom</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>Super XFrom</displayName>
+                <category>Workflow</category>
+            </data>
+        </tool>
+        <tool category="tools::Projects::Asphalt" loc="code\python\tools\projects\_asphalt\a9enlighten\__meta__.xml" name="A9Enlighten">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>Enlighten</wiki>
+                <src>main.pyw</src>
+                <toolTip>Launches Enlighten Utility</toolTip>
+                <displayName>A9 Enlighten</displayName>
+            </data>
+        </tool>
+        <tool category="tools::Projects::Asphalt" loc="code\python\tools\projects\_asphalt\a9lightprocessor\__meta__.xml" name="A9LightProcessor">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>A9 Light Processor</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+            </data>
+        </tool>
+        <tool category="tools::Projects::Asphalt" loc="code\python\tools\projects\_asphalt\mapprocessor\__meta__.xml" name="MapProcessor">
+            <data version="1.0" type="External">
+                <icon>img/icon.png</icon>
+                <wiki>Map Processor</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+            </data>
+        </tool>
+        <tool category="Dungeon Hunter" loc="code\python\tools\projects\_dungeon_hunter\dh5tools\__meta__.xml" name="DH5Tools">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>DH5Tools</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>DH5 Tools</displayName>
+                <category>Dungeon Hunter</category>
+            </data>
+        </tool>
+        <tool category="Dungeon Hunter" loc="code\python\tools\projects\_dungeon_hunter\enlighten\__meta__.xml" name="Enlighten">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>Enlighten</wiki>
+                <src>main.pyw</src>
+                <toolTip>Launches Enlighten Utility</toolTip>
+                <displayName>Enlighten</displayName>
+                <category>Dungeon Hunter</category>
+            </data>
+        </tool>
+        <tool category="Dungeon Hunter" loc="code\python\tools\projects\_dungeon_hunter\lightbridge\__meta__.xml" name="LightBridge">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>LightBridge</wiki>
+                <src>main.pyw</src>
+                <toolTip>import/export Enlighten xml light</toolTip>
+                <displayName>Light Bridge</displayName>
+                <category>Dungeon Hunter</category>
+            </data>
+        </tool>
+        <tool category="Dungeon Hunter" loc="code\python\tools\projects\_dungeon_hunter\lightmapbaker\__meta__.xml" name="LightmapBaker">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>LightmapBaker</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>Lightmap Baker</displayName>
+                <category>Dungeon Hunter</category>
+            </data>
+        </tool>
+        <tool category="Dungeon Hunter" loc="code\python\tools\projects\_dungeon_hunter\lmtagger\__meta__.xml" name="LMTagger">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>LMTagger</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>LM Tagger</displayName>
+                <category>Dungeon Hunter</category>
+            </data>
+        </tool>
+        <tool category="Vray" loc="code\python\tools\rendering_tools\_vray\culsterlighting\__meta__.xml" name="CulsterLighting">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>CulsterLighting</wiki>
+                <src>main.pyw</src>
+                <toolTip/>
+                <displayName>Culster Lighting</displayName>
+                <category>Vray</category>
+            </data>
+        </tool>
+        <tool category="tools::Utilities" loc="code\python\tools\utilities\assetexporter\__meta__.xml" name="AssetExporter">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>AssetExporter</wiki>
+                <src>main.pyw</src>
+                <toolTip>Exports FBX, OBJ, Max file to specified location</toolTip>
+                <displayName>Asset Exporter</displayName>
+                <category/>
+            </data>
+        </tool>
+        <tool category="Utilities" loc="code\python\tools\utilities\objbaker\__meta__.xml" name="OBJBaker">
+            <data version="1.0" type="Studiomax">
+                <icon>img/icon.png</icon>
+                <wiki>OBJBaker</wiki>
+                <src>main.pyw</src>
+                <toolTip>Bakes selected object then exports the images and the object as OBJ to a specified directory. </toolTip>
+                <displayName>OBJ Baker</displayName>
+                <category>Utilities</category>
+            </data>
+        </tool>
+    </tools>
+    <legacy/>
+</index>

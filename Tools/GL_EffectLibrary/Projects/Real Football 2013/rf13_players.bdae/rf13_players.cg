@@ -1,0 +1,195 @@
+
+/*** Generated through Lumonix shaderFX  by: pedro.fernandez in 3dsmax at: 10/10/2011 13:52:53  ***/ 
+
+// This FX shader was built in CgGlitch format. 
+string ParamID = "0x002";	// this string tells 3ds Max to use the CgFX compiler 
+ 
+
+
+float3 AmbientColor_Node;
+sampler2D NormalMapSampler;
+float4x4 viewIT : ViewInverseTranspose;
+sampler2D SphereMapSampler;
+float SphereMapIntensity;
+ 
+sampler2D DiffuseMapSampler;
+float DiffuseMapIntensity;
+ 
+float3 SpecularColor_Node;
+float Glossiness_Node;
+ 
+
+// this function does the different types of light attenuation 
+float attenuation_func(int lightattenType, float4 lightAttenuation, float3 lightVec) 
+{ 
+	float att = 1.0; 
+	return att; 
+} 
+	 
+// this function does the different types of cone angle 
+float coneangle_func(int lightconeType, float lightHotspot, float lightFalloff, float3 lightVec, float3 lightDir) 
+{ 
+	float cone = 1.0; 
+	return cone; 
+} 
+
+/************** light info **************/ 
+
+float3 light1Dir : Direction; 
+float3 light1Pos : POSITION; 
+float4 light1Color : LIGHTCOLOR;
+float4 light1Attenuation : Attenuation;
+float light1Hotspot : HotSpot;
+float light1Falloff : FallOff;
+
+#define light1Type 1
+#define light1attenType 0
+#define light1coneType 0
+#define light1CastShadows false
+
+//---------------------------------- 
+
+float4x4 wvp : WorldViewProjection;
+float4x4 worldI : WorldInverse;
+float4x4 worldIT : WorldInverseTranspose;
+float4x4 viewInv : ViewInverse;
+float4x4 world : World;
+// create the light vector 
+float3 lightVec_func(float3 worldSpacePos, float3 lightVector, int lightType) 
+{ 
+	float3 lightVec = lightVector - worldSpacePos; 
+	return lightVec; 
+} 
+
+
+
+// input from application 
+	struct a2v { 
+	float4 position		: POSITION; 
+
+	float2 texCoord		: TEXCOORD0; 
+	float4 tangent		: TANGENT; 
+	float4 binormal		: BINORMAL; 
+	float4 normal		: NORMAL; 
+
+}; 
+
+// output to fragment program 
+struct v2f { 
+        float4 position    		: POSITION; 
+        float3 light1Vec    	: TEXCOORD0; 
+        float3 eyeVec	    	: TEXCOORD1; 
+
+		float2 texCoord			: TEXCOORD2; 
+        float3 worldTangent  	: TEXCOORD3; 
+        float3 worldBinormal 	: TEXCOORD4; 
+        float3 worldNormal   	: TEXCOORD5; 
+
+}; 
+
+//Vertex Shader
+v2f v(a2v In, uniform float3 lightPos, uniform int lightType, uniform float3 lightDir) 
+{ 
+	v2f Out = (v2f)0; 
+	float3 worldSpacePos = mul(world, In.position).xyz;	//world space position 
+	Out.light1Vec = lightVec_func(worldSpacePos, light1Pos, light1Type); 
+	Out.eyeVec = float3(viewInv[0].w, viewInv[1].w, viewInv[2].w) - worldSpacePos; //eye vector in world space
+	Out.position = mul(wvp, In.position);				//transform vert position to homogeneous clip space 
+
+	Out.texCoord = In.texCoord;						//pass through texture coordinates from channel 1 
+	//this code was added by the Texture Map Node 
+	Out.worldNormal = mul(worldIT, In.normal).xyz;		//compute world space normal 
+	Out.worldBinormal = mul(worldIT, In.binormal).xyz;	//compute world space binormal 
+	Out.worldTangent = mul(worldIT, In.tangent).xyz;		//compute world space tangent 
+
+	return Out; 
+} 
+
+//Pixel Shader
+float4 f(v2f In, uniform float3 lightDir, uniform float4 lightColor, uniform float4 lightAttenuation, uniform float lightHotspot, uniform float lightFalloff, uniform int lightType, uniform int lightattenType, uniform int lightconeType, uniform bool lightCastShadows) : COLOR 
+{ 
+	float3 V = normalize(In.eyeVec);		//creating the eye vector  
+
+	float4 NormalMap = tex2D(NormalMapSampler, In.texCoord.xy);
+	NormalMap.xyz = NormalMap.xyz * 2 - 1;		//expand to -1 to 1 range 
+	//this code was added by the Tex2d Node
+#ifdef DCC_MAX		
+	float3 Nn = normalize(In.worldNormal); 		//input the vectors required for tangent to world space transform 
+	float3 Tn = normalize(In.worldTangent); 
+	float3 Bn = normalize(In.worldBinormal);
+#else	
+	float3 Nn = normalize(In.worldNormal); 		//input the vectors required for tangent to world space transform 
+	float3 Tn = normalize(-In.worldBinormal); 
+	float3 Bn = normalize(In.worldTangent);
+#endif 	
+	NormalMap = float4((Nn * NormalMap.z) + (NormalMap.x * Bn + NormalMap.y * -Tn), NormalMap.w);	 //create a per-pixel normal for Z up 
+	NormalMap.rgb = normalize(NormalMap.rgb); 		//normalized the normal vector 
+	float3 MathWorldXform_5030 = mul( viewIT, float4(NormalMap.rgb.xyz, 0) ).xyz ; 
+	float3 MathVecConstuct_9066 = MathWorldXform_5030;
+	float2 MathVecConstuct_1506 = float2(MathVecConstuct_9066.r, MathVecConstuct_9066.g);
+	float2 UIVector_227 = float2(0.5, -0.5); 
+	float2 UIVector_3560 = float2(0.5, 0.5); 
+	float4 SphereMap = tex2D(SphereMapSampler, ((MathVecConstuct_1506 * UIVector_227) + UIVector_3560).xy);
+	float4 DiffuseMap = tex2D(DiffuseMapSampler, In.texCoord.xy);
+	float3 MathOperator_6387 = (SphereMap.rgb * SphereMapIntensity) * (DiffuseMap.rgb * DiffuseMapIntensity);
+	float3 input1 = (AmbientColor_Node.rgb * MathOperator_6387); 
+
+
+	float3 input2 = MathOperator_6387; 
+
+
+	float3 input3 = SpecularColor_Node.rgb; 
+
+
+	float input4 = DiffuseMap.a; 
+
+
+	float input5 = Glossiness_Node; 
+
+
+	float3 input8 = NormalMap.rgb; 
+
+	float3 ret =  float3(0,0,0); 
+	float3 AmbIllum = input1; 
+	ret = AmbIllum; 
+	float3 diffuseColor = input2;  
+	float3 N = input8;						//using the Normal socket  
+	float3 spec = float3(0,0,0); 
+	float3 specularColor = input3;			//using the Specular Color socket 
+	specularColor *= input4;				//Multiplying Specular Color by the Specular Level  
+	float glossiness = input5;				//using the Glossiness socket  
+
+	float3 L1 = normalize(In.light1Vec.xyz); 
+	float3 light1 = float3(0.0, 0.0, 0.0); 
+	float NdotL1 = dot(N, L1) ;  
+	float diffuse1 = saturate(NdotL1);  
+	float3 H1 = normalize(L1 + V); 
+	float NdotH1 = saturate(dot(N,H1));		//Compute NdotH1  
+	float3 specularColor1 =  pow(NdotH1, glossiness)  * specularColor;//Raise to glossiness power and compute final specular color  
+	light1 += specularColor1 + (diffuseColor * diffuse1);			//add specular and diffuse color together
+	light1 *= light1Color.xyz; 
+	float3 light1Dir = light1Dir;	//use the light direction from the light header information  
+	float attenuation1 = attenuation_func(light1attenType, light1Attenuation, In.light1Vec); 					//calculate the light attenuation  
+	float coneangle1 = coneangle_func(light1coneType, light1Hotspot, light1Falloff, In.light1Vec, light1Dir); 	//calculate the light's cone angle 
+	light1 *= attenuation1 * coneangle1;			//multiply by the light decay  
+	ret +=  light1; 
+
+	float4 done = float4(ret, 1); 
+	return done; 
+} 
+
+/*technique Complete  
+{  
+	pass one  
+    {		 
+		VertexProgram = compile vs_3_0 v(light1Pos, light1Type, light1Dir); 
+		DepthTestEnable = true; 
+		DepthMask = true; 
+		CullFaceEnable = true; 
+		ShadeModel = Smooth;
+		BlendEnable = false; 
+		AlphaTestEnable = false; 
+		FragmentProgram = compile ps_3_0 f(light1Dir, light1Color, light1Attenuation, light1Hotspot, light1Falloff, light1Type, light1attenType, light1coneType, light1CastShadows); 
+	}  
+
+}*/   

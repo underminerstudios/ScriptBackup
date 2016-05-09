@@ -1,0 +1,76 @@
+// -*- mode:c++; -*-
+
+float4x4 worldview;
+float4x4 projection;
+
+sampler2D texture0;
+
+
+float3 LightDirOs;
+float4 LightColorMultiplied;
+
+
+// globals
+float3 IRON_CloudLightAmbColor;
+float4 IRON_CloudFogParams; // separated from fog color. (clouds may have different params)
+
+
+
+struct a2v
+{
+	float3 position  : POSITION; 
+	float2 texcoord0 : TEXCOORD0; // for billboard gen
+	float2 texcoord1 : TEXCOORD1; // atlas
+	float2 texcoord2 : TEXCOORD2; // size
+	float3 texcoord3 : TEXCOORD3; // lighting group center
+};
+
+struct v2f
+{
+	float4 position  : POSITION; 
+	float2 texcoord0 : TEXCOORD0;
+	float3 normal : TEXCOORD1;
+	float3 lightDir : TEXCOORD2;
+	float fogFactor : TEXCOORD3;
+};
+
+v2f VP(a2v In)
+{
+	v2f Out = (v2f)0;
+	float4 center = mul(worldview, float4(In.position, 1.0));
+	float4 p = center;
+	float3 front, up, right;
+	up = float3(0.0, 1.0, 0.0);    // in view space
+	right = float3(1.0, 0.0, 0.0);
+	// size in channel 2  (use atlas)
+	float BillboardSizeW = In.texcoord2.x;
+	float BillboardSizeH = -In.texcoord2.y;
+	p.xyz += up*(-In.texcoord0.y-0.5)*BillboardSizeH; // put to center
+	p.xyz += right*(In.texcoord0.x-0.5)*BillboardSizeW;
+	Out.position = mul(projection, p);
+
+    // Atlased texture
+	Out.texcoord0 = In.texcoord1.xy;
+
+    // Lighting
+	float3 groupCenter = In.texcoord3;
+	groupCenter = mul(worldview, float4(groupCenter, 1.0)).xyz; // to view
+	Out.normal = normalize(p.xyz-groupCenter);
+	Out.lightDir = mul(worldview, float4(LightDirOs, 0.0)).xyz;
+
+	// Fog
+	float depth = dot(worldview[2], float4(In.position, 1.0)); // row major here
+	Out.fogFactor = clamp((depth-IRON_CloudFogParams[0])/(IRON_CloudFogParams[1]-IRON_CloudFogParams[0]), IRON_CloudFogParams[2], IRON_CloudFogParams[3]);
+
+	return Out;
+}
+
+float4 FP(v2f In) : COLOR
+{
+	float4 base = tex2D(texture0, In.texcoord0);
+	float t = max(0.0, dot(In.normal, In.lightDir));
+	float3 final = (IRON_CloudLightAmbColor+LightColorMultiplied.rgb*t)*base.rgb;
+	return float4(final, base.a*In.fogFactor);
+}
+
+

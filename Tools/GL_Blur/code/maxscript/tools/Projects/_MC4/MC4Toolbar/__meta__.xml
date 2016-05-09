@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>MC4Toolbar</wiki>
+  <src>MC4_Toolbar.ms</src>
+  <toolTip>Toolbar established during MC4 production</toolTip>
+  <displayName>MC4 Toolbar</displayName>
+  <category>MC4</category>
+</data>

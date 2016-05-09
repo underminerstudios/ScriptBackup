@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>CulsterLighting</wiki>
+  <src>main.pyw</src>
+  <toolTip></toolTip>
+  <displayName>Culster Lighting</displayName>
+  <category>Vray</category>
+</data>

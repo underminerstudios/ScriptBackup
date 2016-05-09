@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gameloft Path Fixer</title>
+<link rel="stylesheet" href="../../../ReadMeStyle.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="title">Gameloft Path Fixer</div>
+<div id="author">author: Norman Schaar (norman.schaar@gameloft.com)</div>
+
+<ul class="info">
+	<li>In most of our projects we download a svn repo to a folder in our PCs. This folder can be everywhere, that's why we map it to a specific letter.
+	The idea is that everybody works inside this mapped drive, so that all paths point to a specific letter.</li>
+
+	<li>Unfortunately sometimes paths have been specified to the svn folder instead of the mapped folder. This results in paths missing
+	when a max file is opened in another PC.</li>
+	
+	<li>This script gathers all the missing or incorrect paths and attempts to fix them so that they point to the mapped drive. It also works with GL_Effect materials.
+	Those paths that have not been fixed automatically can be fixed manually through the "Asset Tracker" dialog.</li>
+</ul>
+</body>
+</html>

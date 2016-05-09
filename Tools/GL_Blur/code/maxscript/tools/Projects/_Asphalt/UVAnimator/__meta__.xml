@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/a9tools.png</icon>
+  <wiki>A9UVAnimator</wiki>
+  <src>A9_uvanim.ms</src>
+  <toolTip>Asphalt 9 UV Animator Tool</toolTip>
+</data>

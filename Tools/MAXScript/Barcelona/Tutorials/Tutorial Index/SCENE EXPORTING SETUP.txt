@@ -1,0 +1,23 @@
+[SCENE EXPORTING SETUP]
+--------------------------
+Ok, I have my scene done and I want to export everything to CLARA...
+What should I do?
+
+1) DIRECTX TRANSLATOR:
+If you're using some of our Custom-DirectX materials (DX-terrain-material or DX-asphalt-material) you should use this script first of all.
+Transform the DirectX Mats using the [DIRECTX to VRAY] option. (You can ignore this step if you're not using DirectX mats at all).
+
+2) VRAY TRANSLATOR:
+Then, we need to be sure that all the scene materials are STANDAR materials only. (MultiSubObject Materials with STANDAR materials are allowed too).
+Transform the materials using the [VRAY to STANDAR] option.
+
+3) BUMPMAP REPLACER:
+After that, we need to be sure that all the bumpmaps used in the scene are set as NORMALBUMPS.
+Transform all the scene bumpmaps checking the [STANDAR_BUMP] option.
+
+4) TERRAIN MIX TRANSLATOR:
+Finally, if you have been using vertex-color-blend to mix different texture channels (using the DX-terrain-material or DX-asphalt-material) you should translate all those RGB channels to the proper CLARA structure inside a Standar material.
+To do this we will use the [TERRAIN MIX TRANSLATOR] (You can ignore this if you didn't use this technique)
+
+If everything has gone ok, now you should be able to export the scene to clara without problems.
+For more information about exporting objects please check the [Massive DAE exportation] tutorial.

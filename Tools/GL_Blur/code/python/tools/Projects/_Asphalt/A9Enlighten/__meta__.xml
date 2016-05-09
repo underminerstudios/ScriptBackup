@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>Enlighten</wiki>
+  <src>main.pyw</src>
+  <toolTip>Launches Enlighten Utility</toolTip>
+  <displayName>A9 Enlighten</displayName>
+</data>

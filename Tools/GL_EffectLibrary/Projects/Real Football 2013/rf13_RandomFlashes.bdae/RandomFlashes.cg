@@ -1,0 +1,196 @@
+
+/*** Generated through Lumonix shaderFX  by: norman.schaar in 3dsmax at: 20/04/2012 12:21:30  ***/ 
+
+// This FX shader was built to support FX Composer. 
+
+
+float3 Color
+<
+	string UIName = "Color";
+	string UIWidget = "Color";
+> = {1.0f, 1.0f, 1.0f };
+ 
+texture RandomPattern
+<
+	string ResourceName = "random_flashes.tga";
+	string UIName = "RandomPattern";
+	string ResourceType = "2D";
+>;
+ 
+sampler2D RandomPatternSampler = sampler_state
+{
+	Texture = <RandomPattern>;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	MipFilter = LINEAR;
+	AddressU = WRAP;
+	AddressV = WRAP;
+};
+ 
+float RandomTiles
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "RandomTiles";
+> = 8.0;
+ 
+texture TextureAlpha
+<
+	string ResourceName = "random_flashes.tga";
+	string UIName = "TextureAlpha";
+	string ResourceType = "2D";
+>;
+ 
+sampler2D TextureAlphaSampler = sampler_state
+{
+	Texture = <TextureAlpha>;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	MipFilter = LINEAR;
+	AddressU = WRAP;
+	AddressV = WRAP;
+};
+ 
+float FramesPerSecond
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "FramesPerSecond";
+> = 15.0;
+ 
+float Time : TIME < string UIWidget = "None"; >;
+ 
+
+// this function does the different types of light attenuation 
+float attenuation_func(int lightattenType, float4 lightAttenuation, float3 lightVec) 
+{ 
+	float att = 1.0; 
+	return att; 
+} 
+	 
+// this function does the different types of cone angle 
+float coneangle_func(int lightconeType, float lightHotspot, float lightFalloff, float3 lightVec, float3 lightDir) 
+{ 
+	float cone = 1.0; 
+	return cone; 
+} 
+
+/************** light info **************/ 
+
+float3 light1Dir : Direction 
+< 
+	string UIName = "Light 1 Direction"; 
+	string Object = "TargetLight"; 
+	string Space = "World"; 
+> = {100.0f, 100.0f, 100.0f}; 
+
+float3 light1Pos : POSITION 
+< 
+	string UIName = "Light 1 Position"; 
+	string Object = "PointLight"; 
+	string Space = "World"; 
+> = {100.0f, 100.0f, 100.0f}; 
+
+float4 light1Color : LIGHTCOLOR <string UIWidget = "Color"; > = { 1.0f, 1.0f, 1.0f, 1.0f}; 
+float4 light1Attenuation : Attenuation <string UIName = "Attenuation Settings"; > = { 1.0f, 1.0f, 1.0f, 1.0f}; 
+float light1Hotspot : HotSpot <string UIName = "Hot Spot Value"; > = { 43.0f }; 
+float light1Falloff : FallOff <string UIName = "Falloff Value"; > = { 45.0f }; 
+
+#define light1Type 1
+#define light1attenType 0
+#define light1coneType 0
+#define light1CastShadows false
+
+//---------------------------------- 
+
+float4x4 wvp : WorldViewProjection < string UIWidget = "None"; >;  
+float4x4 worldI : WorldInverse < string UIWidget = "None"; >;  
+// create the light vector 
+float3 lightVec_func(float3 worldSpacePos, float3 lightVector, float3x3 objTangentXf, int lightType) 
+{ 
+	float3 lightVec = mul(objTangentXf, (mul((lightVector - worldSpacePos), worldI).xyz)); 
+	return lightVec; 
+} 
+
+// input from application 
+	struct a2v { 
+	float4 position		: POSITION; 
+
+	float2 texCoord		: TEXCOORD0; 
+	float4 normal		: NORMAL; 
+	float4 binormal		: BINORMAL; 
+	float4 tangent		: TANGENT; 
+
+}; 
+
+// output to fragment program 
+struct v2f { 
+        float4 position    		: POSITION; 
+
+	float2 texCoord			: TEXCOORD0; 
+
+}; 
+
+// Ambient Pass Vertex Shader: 
+v2f av(a2v In, uniform float3 lightPos, uniform int lightType, uniform float3 lightDir) 
+{ 
+	v2f Out = (v2f)0; 
+
+	/*============================= Custom Vertex Shader Code =============================*/ 
+	float2 ScaleCoordinates = float2((1.0 / RandomTiles), (1.0 / RandomTiles));
+	float UIConst_2796 = 30.0; 
+	float MathMod_48 = fmod(Time * 0.208333,UIConst_2796);		//x Mod y 
+	float speed = FramesPerSecond * MathMod_48;
+	float index = floor( speed );		//floor of speed
+	float rowCount = floor( (speed / RandomTiles) );		//floor of (speed / RandomTiles)
+	float2 offsetVector = float2(index, rowCount);
+	float2 UVCoordinates = In.texCoord.xy; 
+	In.texCoord.xy = (ScaleCoordinates * (offsetVector + UVCoordinates));
+	Out.texCoord.xy = In.texCoord.xy;
+	/*=====================================================================================*/ 
+
+
+	Out.position = mul(wvp, In.position);				//transform vert position to homogeneous clip space 
+
+	Out.texCoord = In.texCoord;						//pass through texture coordinates from channel 1 
+
+	return Out; 
+} 
+
+// Ambient Pass Pixel Shader: 
+float4 af(v2f In, uniform float3 lightDir, uniform float4 lightColor, uniform float4 lightAttenuation, uniform float lightHotspot, uniform float lightFalloff, uniform int lightType, uniform int lightattenType, uniform int lightconeType, uniform bool lightCastShadows, uniform int shadowPassCount) : COLOR 
+{ 
+
+	float3 input1 = Color.rgb; 
+	float4 RandomPattern = tex2D(RandomPatternSampler, In.texCoord.xy);
+	float2 MathVecConstuct_4421 = float2(RandomTiles, RandomTiles);
+	float2 INUV_6869 = In.texCoord.xy; 
+	float4 TextureAlpha = tex2D(TextureAlphaSampler, (MathVecConstuct_4421 * INUV_6869).xy);
+	float input3 = (RandomPattern.r * TextureAlpha.a); 
+
+	float4 ret =  float4(input1, 1); 
+	ret.a = input3 ; 
+	return ret; 
+} 
+
+technique Complete  
+{  
+	pass ambient  
+    {		 
+		VertexShader = compile vs_2_0 av(light1Pos,  light1Type, light1Dir); 
+		ZEnable = true; 
+		ZWriteEnable = true; 
+		CullMode = cw; 
+		ShadeMode = Gouraud;
+		AlphaBlendEnable = true; 
+		SrcBlend = SrcAlpha; 
+		DestBlend = InvSrcAlpha; 
+		AlphaTestEnable = FALSE; 
+		PixelShader = compile ps_2_0 af(light1Dir, light1Color, light1Attenuation, light1Hotspot, light1Falloff, light1Type, light1attenType, light1coneType, light1CastShadows, 1); 
+	}  
+
+}    

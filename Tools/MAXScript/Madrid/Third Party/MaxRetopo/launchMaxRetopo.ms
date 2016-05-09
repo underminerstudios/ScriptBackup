@@ -1,0 +1,1 @@
+filein (pathConfig.removePathLeaf(getSourceFileName()) + "\\Max_Retopo.mse")

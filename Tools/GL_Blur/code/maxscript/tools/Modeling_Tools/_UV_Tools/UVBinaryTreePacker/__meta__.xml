@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>UVBinaryTreePacker</wiki>
+  <src>UVBinaryTreePacker.ms</src>
+  <toolTip>Packs scene using binary tree and surface area</toolTip>
+  <displayName>UV Binary Tree Packer</displayName>
+  <category>UV_Tools</category>
+</data>

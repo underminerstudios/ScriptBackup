@@ -1,0 +1,43 @@
+#!/usr/bin/python
+import os
+import glob
+import tempfile
+import shutil
+import sys
+import subprocess
+import time
+
+my_glob = sys.argv[1]
+
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
+#for dirname in glob.glob("../Raw/Textures/%s" % my_glob):
+#  tempdir = tempfile.mkdtemp()
+#  for ifn in glob.glob(dirname+"/*.png"):
+#    ofn = os.path.join(tempdir, os.path.basename(ifn))
+#    print ifn, ofn
+#    subprocess.call("convert -resize 1024x1024 %s %s" % (ifn, ofn), shell=True)
+#    subprocess.call("./multiple_of_4.py %s" % ofn, shell=True)
+#    subprocess.call("pngquant --ext=.png --force %s" % ofn, shell=True)
+#  shotname = os.path.basename(dirname)
+#  destdir = os.path.join("../Assets/Resources", shotname)
+#  subprocess.call("rsync -avz %s/ %s" % (tempdir, destdir), shell=True)
+#  shutil.rmtree(tempdir)
+
+for dirname in glob.glob("../Raw/Textures/%s" % my_glob):
+  shotname = os.path.basename(dirname)
+  for ifn in glob.glob(dirname+"/*.png"):
+    basename = os.path.basename(ifn)
+    dfn = os.path.join("../Assets/Resources", shotname, basename)
+
+    itime = time.ctime(os.path.getmtime(ifn))
+    dtime = time.ctime(os.path.getmtime(ofn))
+    if itime <= otime:
+      continue
+
+    tfn = mktemp(suffix=".png")
+    
+    subprocess.call("convert -resize 1024x1024 %s %s" % (ifn, tfn), shell=True)
+    subprocess.call("./multiple_of_4.py %s" % tfn, shell=True)
+    subprocess.call("pngquant --ext=.png --force %s" % tfn, shell=True)
+    shutil.copyfile(tfn, ofn)

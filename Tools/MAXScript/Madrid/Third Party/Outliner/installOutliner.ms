@@ -1,0 +1,1 @@
+filein (pathConfig.removePathLeaf(getSourceFileName()) + "\\outliner_2_1_4_1.mzp")

@@ -1,0 +1,227 @@
+
+/*** Generated through Lumonix shaderFX  by: norman.schaar in 3dsmax at: 18/04/2012 15:17:52  ***/ 
+
+// This FX shader was built to support FX Composer. 
+
+
+float3 TeamColor
+<
+	string UIName = "TeamColor";
+	string UIWidget = "Color";
+> = {0.0f, 0.0f, 1.0f };
+ 
+float LogoTileVector2x
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "LogoTileX";
+> = 1.0;
+ 
+float LogoTileVector2y
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "LogoTileY";
+> = 1.0;
+ 
+float LogoOffsetVector2x
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "LogoOffsetX";
+> = 0.0;
+ 
+float LogoOffsetVector2y
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "LogoOffsetY";
+> = 0.0;
+ 
+texture LogoTexture
+<
+	string ResourceName = "aachen.png";
+	string UIName = "LogoTex";
+	string ResourceType = "2D";
+>;
+ 
+sampler2D LogoTextureSampler = sampler_state
+{
+	Texture = <LogoTexture>;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	MipFilter = LINEAR;
+	AddressU = WRAP;
+	AddressV = WRAP;
+};
+ 
+float Time : TIME < string UIWidget = "None"; >;
+ 
+texture WaveTexture
+<
+	string ResourceName = "flag_wave.tga";
+	string UIName = "WaveTexture";
+	string ResourceType = "2D";
+>;
+ 
+sampler2D WaveTextureSampler = sampler_state
+{
+	Texture = <WaveTexture>;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	MipFilter = LINEAR;
+	AddressU = WRAP;
+	AddressV = WRAP;
+};
+ 
+texture LightMapTex
+<
+	string ResourceName = "bs_lm2_day.tga";
+	string UIName = "LightMapTex";
+	string ResourceType = "2D";
+>;
+ 
+sampler2D LightMapTexSampler = sampler_state
+{
+	Texture = <LightMapTex>;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	MipFilter = LINEAR;
+	AddressU = WRAP;
+	AddressV = WRAP;
+};
+ 
+float LightMapIntensity
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "LightMapIntensity";
+> = 1.5;
+ 
+
+// this function does the different types of light attenuation 
+float attenuation_func(int lightattenType, float4 lightAttenuation, float3 lightVec) 
+{ 
+	float att = 1.0; 
+	return att; 
+} 
+	 
+// this function does the different types of cone angle 
+float coneangle_func(int lightconeType, float lightHotspot, float lightFalloff, float3 lightVec, float3 lightDir) 
+{ 
+	float cone = 1.0; 
+	return cone; 
+} 
+
+/************** light info **************/ 
+
+float3 light1Dir : Direction 
+< 
+	string UIName = "Light 1 Direction"; 
+	string Object = "TargetLight"; 
+	string Space = "World"; 
+> = {100.0f, 100.0f, 100.0f}; 
+
+float3 light1Pos : POSITION 
+< 
+	string UIName = "Light 1 Position"; 
+	string Object = "PointLight"; 
+	string Space = "World"; 
+> = {100.0f, 100.0f, 100.0f}; 
+
+float4 light1Color : LIGHTCOLOR <string UIWidget = "Color"; > = { 1.0f, 1.0f, 1.0f, 1.0f}; 
+float4 light1Attenuation : Attenuation <string UIName = "Attenuation Settings"; > = { 1.0f, 1.0f, 1.0f, 1.0f}; 
+float light1Hotspot : HotSpot <string UIName = "Hot Spot Value"; > = { 43.0f }; 
+float light1Falloff : FallOff <string UIName = "Falloff Value"; > = { 45.0f }; 
+
+#define light1Type 1
+#define light1attenType 0
+#define light1coneType 0
+#define light1CastShadows false
+
+//---------------------------------- 
+
+float4x4 wvp : WorldViewProjection < string UIWidget = "None"; >;  
+float4x4 worldI : WorldInverse < string UIWidget = "None"; >;  
+// create the light vector 
+float3 lightVec_func(float3 worldSpacePos, float3 lightVector, float3x3 objTangentXf, int lightType) 
+{ 
+	float3 lightVec = mul(objTangentXf, (mul((lightVector - worldSpacePos), worldI).xyz)); 
+	return lightVec; 
+} 
+
+// input from application 
+	struct a2v { 
+	float4 position		: POSITION; 
+
+	float2 texCoord		: TEXCOORD0; 
+	float2 texCoord1	: TEXCOORD1; 
+
+}; 
+
+// output to fragment program 
+struct v2f { 
+        float4 position    		: POSITION; 
+
+	float2 texCoord			: TEXCOORD0; 
+	float2 texCoord1		: TEXCOORD1; 
+
+}; 
+
+// Ambient Pass Vertex Shader: 
+v2f av(a2v In, uniform float3 lightPos, uniform int lightType, uniform float3 lightDir) 
+{ 
+	v2f Out = (v2f)0; 
+	Out.position = mul(wvp, In.position);				//transform vert position to homogeneous clip space 
+
+	Out.texCoord = In.texCoord;						//pass through texture coordinates from channel 1 
+	Out.texCoord1 = In.texCoord1;						//pass through texture coordinates from channel 2 
+
+	return Out; 
+} 
+
+// Ambient Pass Pixel Shader: 
+float4 af(v2f In, uniform float3 lightDir, uniform float4 lightColor, uniform float4 lightAttenuation, uniform float lightHotspot, uniform float lightFalloff, uniform int lightType, uniform int lightattenType, uniform int lightconeType, uniform bool lightCastShadows, uniform int shadowPassCount) : COLOR 
+{ 
+
+	float2 LogoUV = In.texCoord.xy; 
+	float2 LogoTileVector2 = float2(LogoTileVector2x, LogoTileVector2y); 
+	float2 LogoOffsetVector2 = float2(LogoOffsetVector2x, LogoOffsetVector2y); 
+	float4 LogoTexture = tex2D(LogoTextureSampler, ((LogoUV * LogoTileVector2) + LogoOffsetVector2).xy);
+	float3 LERP_TeamColor_Logo = lerp(TeamColor.rgb, LogoTexture.rgb, LogoTexture.a); 
+	float2 WaveUV = In.texCoord.xy; 
+	float UIConst_661 = 30.0; 
+	float MathMod_5071 = fmod(Time * 0.208333,UIConst_661);		//x Mod y 
+	float Speed = 0.1; 
+	float4 WaveTexture = tex2D(WaveTextureSampler, (WaveUV + (MathMod_5071 * Speed)).xy);
+	float4 LightMapTex = tex2D(LightMapTexSampler, In.texCoord1.xy);
+	float3 input1 = ((LERP_TeamColor_Logo * WaveTexture.rgb) * (LightMapTex.rgb * LightMapIntensity)); 
+
+	float4 ret =  float4(input1, 1); 
+	return ret; 
+} 
+
+technique Complete  
+{
+	pass ambient  
+    {
+		VertexShader = compile vs_2_0 av(light1Pos,  light1Type, light1Dir); 
+		ZEnable = true; 
+		ZWriteEnable = true; 
+		CullMode = cw; 
+		ShadeMode = Gouraud;
+		AlphaBlendEnable = false; 
+		AlphaTestEnable = FALSE; 
+		PixelShader = compile ps_2_0 af(light1Dir, light1Color, light1Attenuation, light1Hotspot, light1Falloff, light1Type, light1attenType, light1coneType, light1CastShadows, 1); 
+	}
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Face Collection Manager</title>
+<link rel="stylesheet" href="../../../ReadMeStyle.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="title">Face Collection Manager</div>
+<div id="author">author: Marc Marti - marc.marti@gameloft.com</div>
+
+<b>DESCRIPTION:</b>
+<ul class="info">
+	<li>This script will allow you to attach a bunch of objects change their mapping coordinates and detach them gain preserving their names and properties.</li>
+	<li>This is specially usefull, as instance, to bake a single lightmap from a bunch of separated objects that belongs to the same sector and use the same lightmap but they should be exported separatedly.</li>	
+	<li>IMPORTANT: Save your scene before you start using this script!</li>
+</ul>
+<b>INSTRUCTIONS:</b>
+<ul class="info">
+	<li>Select the desired objects to attach.</li>
+	<li>Press [Attach selected objects].</li>
+	<li>Change their mapping coordinates.</li>
+	<li><b>IMPORTANT:</b> Do not weld or delete any vertex or face. If you change any geometry elements the script will fail and you will not be able to dettach the meshes!</li>
+	<li>Press [Detach all collections].</li>
+</ul>
+<b>NOTES:</b>
+<ul class="info">
+	<li>This script deals with quite delicate processes and can mess the things a lot if you don't use it apropiately, so, please be sure that you SAVE YOUR SCENE BEFORE YOU START USING THIS SCRIPT.</li>
+	<li>If you try to close the script an alert window will appear. This is totally normal, and it's to prevent closing the window by mistake, leaving all the objects attached.</li>
+</ul>
+</body>
+</html>

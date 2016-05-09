@@ -1,0 +1,206 @@
+
+/*** Generated through Lumonix shaderFX  by: norman.schaar in 3dsmax at: 08/05/2012 12:16:29  ***/ 
+
+// This FX shader was built to support FX Composer. 
+
+
+texture TextureAtlas
+<
+	string ResourceName = "supporter.tga";
+	string UIName = "TextureAtlas";
+	string ResourceType = "2D";
+>;
+ 
+sampler2D TextureAtlasSampler = sampler_state
+{
+	Texture = <TextureAtlas>;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	MipFilter = LINEAR;
+	AddressU = WRAP;
+	AddressV = WRAP;
+};
+ 
+float3 TeamColor
+<
+	string UIName = "TeamColor";
+	string UIWidget = "Color";
+> = {1.0f, 0.0f, 0.0f };
+ 
+texture LightMap
+<
+	string ResourceName = "bs_lm2_day.tga";
+	string UIName = "LightMap";
+	string ResourceType = "2D";
+>;
+ 
+sampler2D LightMapSampler = sampler_state
+{
+	Texture = <LightMap>;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	MipFilter = LINEAR;
+	AddressU = WRAP;
+	AddressV = WRAP;
+};
+ 
+float LightmapIntensity
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "LightmapIntensity";
+> = 1.5;
+ 
+float AnimPeriode
+<
+	string UIWidget = "slider";
+	float UIMin = -999.0;
+	float UIMax = 999.0;
+	float UIStep = 0.1;
+	string UIName = "AnimPeriode";
+> = 2.5;
+ 
+float Time : TIME < string UIWidget = "None"; >;
+ 
+
+// this function does the different types of light attenuation 
+float attenuation_func(int lightattenType, float4 lightAttenuation, float3 lightVec) 
+{ 
+	float att = 1.0; 
+	return att; 
+} 
+	 
+// this function does the different types of cone angle 
+float coneangle_func(int lightconeType, float lightHotspot, float lightFalloff, float3 lightVec, float3 lightDir) 
+{ 
+	float cone = 1.0; 
+	return cone; 
+} 
+
+/************** light info **************/ 
+
+float3 light1Dir : Direction 
+< 
+	string UIName = "Light 1 Direction"; 
+	string Object = "TargetLight"; 
+	string Space = "World"; 
+> = {100.0f, 100.0f, 100.0f}; 
+
+float3 light1Pos : POSITION 
+< 
+	string UIName = "Light 1 Position"; 
+	string Object = "PointLight"; 
+	string Space = "World"; 
+> = {100.0f, 100.0f, 100.0f}; 
+
+float4 light1Color : LIGHTCOLOR <string UIWidget = "Color"; > = { 1.0f, 1.0f, 1.0f, 1.0f}; 
+float4 light1Attenuation : Attenuation <string UIName = "Attenuation Settings"; > = { 1.0f, 1.0f, 1.0f, 1.0f}; 
+float light1Hotspot : HotSpot <string UIName = "Hot Spot Value"; > = { 43.0f }; 
+float light1Falloff : FallOff <string UIName = "Falloff Value"; > = { 45.0f }; 
+
+#define light1Type 1
+#define light1attenType 0
+#define light1coneType 0
+#define light1CastShadows false
+
+//---------------------------------- 
+
+float4x4 wvp : WorldViewProjection < string UIWidget = "None"; >;  
+float4x4 worldI : WorldInverse < string UIWidget = "None"; >;  
+// create the light vector 
+float3 lightVec_func(float3 worldSpacePos, float3 lightVector, float3x3 objTangentXf, int lightType) 
+{ 
+	float3 lightVec = mul(objTangentXf, (mul((lightVector - worldSpacePos), worldI).xyz)); 
+	return lightVec; 
+} 
+
+// input from application 
+	struct a2v { 
+	float4 position		: POSITION; 
+
+	float2 texCoord		: TEXCOORD0; 
+	float2 texCoord1	: TEXCOORD1; 
+	float4 normal		: NORMAL; 
+	float4 binormal		: BINORMAL; 
+	float4 tangent		: TANGENT; 
+
+}; 
+
+// output to fragment program 
+struct v2f { 
+        float4 position    		: POSITION; 
+
+	float2 texCoord			: TEXCOORD0; 
+	float2 texCoord1		: TEXCOORD1; 
+
+}; 
+
+// Ambient Pass Vertex Shader: 
+v2f av(a2v In, uniform float3 lightPos, uniform int lightType, uniform float3 lightDir) 
+{ 
+	v2f Out = (v2f)0; 
+
+	/*============================= Custom Vertex Shader Code =============================*/ 
+	float2 INUV_3008 = In.texCoord.xy; 
+	float UIConst_335 = 0.0; 
+	float UIConst_811 = 30.0; 
+	float MathMod_7616 = fmod(Time * 0.208333,UIConst_811);		//x Mod y 
+	float UIConst_2555 = 4.0; 
+	float MathRound_113 = floor( ((AnimPeriode * MathMod_7616) * UIConst_2555) );		//floor of ((AnimPeriode * MathMod_7616) * UIConst_2555)
+	float UIConst_8971 = 0.25; 
+	float UIConst_6821 = 1.0; 
+	float MathMod_7285 = fmod((MathRound_113 * UIConst_8971),UIConst_6821);		//x Mod y 
+	float2 MathVecConstuct_3437 = float2(UIConst_335, MathMod_7285);
+	In.texCoord.xy = (INUV_3008 + MathVecConstuct_3437);
+	Out.texCoord.xy = In.texCoord.xy;
+	/*=====================================================================================*/ 
+
+
+	Out.position = mul(wvp, In.position);				//transform vert position to homogeneous clip space 
+
+	Out.texCoord = In.texCoord;						//pass through texture coordinates from channel 1 
+	Out.texCoord1 = In.texCoord1;						//pass through texture coordinates from channel 2 
+
+	return Out; 
+} 
+
+// Ambient Pass Pixel Shader: 
+float4 af(v2f In, uniform float3 lightDir, uniform float4 lightColor, uniform float4 lightAttenuation, uniform float lightHotspot, uniform float lightFalloff, uniform int lightType, uniform int lightattenType, uniform int lightconeType, uniform bool lightCastShadows, uniform int shadowPassCount) : COLOR 
+{ 
+
+	float4 TextureAtlas = tex2D(TextureAtlasSampler, In.texCoord.xy);
+	float UIConst_8966 = 0.5; 
+	float UIConst_2808 = 2.0; 
+	float3 MathLerp_7859 = lerp(TextureAtlas.rgb, (TextureAtlas.rgb * TeamColor.rgb), ((TextureAtlas.a - UIConst_8966) * UIConst_2808)); 
+	float4 LightMap = tex2D(LightMapSampler, In.texCoord1.xy);
+	float3 input1 = (MathLerp_7859 * (LightMap.rgb * (LightMap.rgb + LightmapIntensity))); 
+	float UIConst_4945 = 2.0; 
+	float UIConst_7932 = 0.0; 
+	float UIConst_2641 = 1.0; 
+	float MathClamp_1913 = clamp((TextureAtlas.a * UIConst_4945), UIConst_7932, UIConst_2641); 
+	float input3 = MathClamp_1913; 
+
+	float4 ret =  float4(input1, 1); 
+	ret.a = input3 ; 
+	return ret; 
+} 
+
+technique Complete  
+{  
+	pass ambient  
+    {		 
+		VertexShader = compile vs_2_0 av(light1Pos,  light1Type, light1Dir); 
+		ZEnable = true; 
+		ZWriteEnable = true; 
+		CullMode = cw; 
+		ShadeMode = Gouraud;
+		AlphaBlendEnable = true; 
+		SrcBlend = SrcAlpha; 
+		DestBlend = InvSrcAlpha; 
+		AlphaTestEnable = FALSE; 
+		PixelShader = compile ps_2_0 af(light1Dir, light1Color, light1Attenuation, light1Hotspot, light1Falloff, light1Type, light1attenType, light1coneType, light1CastShadows, 1); 
+	}  
+
+}    

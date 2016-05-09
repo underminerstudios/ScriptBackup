@@ -1,0 +1,9 @@
+		<controller id="+++LOD_SELECTOR_NAME+++">
+			<extra>			
+				<lod_selector type="range" count="+++LOD_COUNT+++">
+					<float_array name="ranges" count="+++LOD_COUNT+++">+++LOD_RANGES+++</float_array>
+					<float_array name="hysteresis" count="+++LOD_COUNT+++">+++LOD_HYST+++</float_array>
+					<Name_array name="names" count="+++LOD_COUNT+++">+++LOD_NAMES+++</Name_array>
+				</lod_selector>
+			</extra>
+		</controller>

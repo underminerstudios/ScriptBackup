@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bakeParamsList version="1" albedoRendered="EnlightenSystems" >
+	<bakeParams name="max" resolution="2048 2048" mosaicResolution="2048 2048" packUVs="false">
+		<direct maxAASamples="8" maxLightSamples="32"/>
+		<ao quality="128" distance="1" />
+	</bakeParams>
+	<bakeParams name="props" resolution="256 256" mosaicResolution="256 256" packUVs="false">
+		<direct maxAASamples="8" maxLightSamples="32"/>
+		<ao quality="128" distance="1" />
+	</bakeParams>
+	<bakeParams name="occ" resolution="128 128" mosaicResolution="128 128" packUVs="false">
+		<direct maxAASamples="8" maxLightSamples="32"/>
+		<ao quality="32" distance="1" />
+	</bakeParams>
+</bakeParamsList>

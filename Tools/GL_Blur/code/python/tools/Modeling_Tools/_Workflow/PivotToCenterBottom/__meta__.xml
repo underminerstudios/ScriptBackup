@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>PivotToCenterBottom</wiki>
+  <src>main.pyw</src>
+  <toolTip>Places pivot on the center bottom of the bounding box.</toolTip>
+  <displayName>Pivot To Center Bottom</displayName>
+  <category>Workflow</category>
+</data>

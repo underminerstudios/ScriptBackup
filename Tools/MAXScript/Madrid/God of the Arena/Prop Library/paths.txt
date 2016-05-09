@@ -1,0 +1,6 @@
+Q:\environments\stadium_props
+Q:\environments\stadium_textures
+Q:\gladiators\romans\equipment
+Q:\gladiators\dimachaerus\equipment
+Q:\gladiators\retiarius\equipment
+

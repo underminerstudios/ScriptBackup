@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Batch Viewport Render</title>
+<link rel="stylesheet" href="../../../ReadMeStyle.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="title">Batch Viewport Render</div>
+<div id="author">author: Norman Schaar (norman.schaar@gameloft.com)</div>
+
+<ul class="info">
+<li>This script will render the viewport from the selected max files.</li>
+<li>Output will be a avi file, with the same name as the maxfile.It will be saved in a subfolder with the max file name.</li>
+<li>The default avi settings will be used. So make sure to change them before, if you want. The script won't force any avi settings.</li>
+<li>Two different cameras will be merged from the CAMERAS.max file</li>
+<li>If the max file name contains a "_pv_" the "PV" camera will be used, if not, the other one will be used instead.</li>
+<li>The material in slot 24 will be applied to all the objects in the scene.</li>
+<li>Check line 38 for the Grab Viewport options</li>
+</ul>
+</body>
+</html>

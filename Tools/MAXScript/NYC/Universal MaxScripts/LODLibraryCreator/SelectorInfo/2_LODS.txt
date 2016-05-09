@@ -1,0 +1,10 @@
+		<controller id="+SEL+2_LODS+SEL+">
+			<extra>			
+				<lod_selector type="range" count="+COUNT+2+COUNT+">
+					<float_array name="ranges" count="+COUNT+2+COUNT+">+RANGES+20 50+RANGES+</float_array>
+					<float_array name="hysteresis" count="+COUNT+2+COUNT+">+HYST+25 36+HYST+</float_array>
+					<Name_array name="names" count="+COUNT+2+COUNT+">+NAMES+low high+NAMES+</Name_array>
+				</lod_selector>
+			</extra>
+		</controller>
+MAX INFO TO DELETE:2_LODS,2,low high,20 50,25 36

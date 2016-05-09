@@ -1,0 +1,15 @@
+fn FN_SET_AFFINITY =
+(
+	if maxfilename == "vraydummy2012.max" do
+	(
+		local theBit = 0P
+		for n in theCores do
+		(
+			theBit = bit.set theBit (n + 1) true
+		)
+		sysinfo.processAffinity = theBit
+	)
+)
+
+callbacks.removeScripts id:#VRAY_SPAWNER_3DSMAX_PRIORITY
+callbacks.addScript #filePostOpen "FN_SET_AFFINITY()" id:#VRAY_SPAWNER_3DSMAX_PRIORITY

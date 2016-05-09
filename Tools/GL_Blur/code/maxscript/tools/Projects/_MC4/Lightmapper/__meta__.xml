@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>Lightmapper</wiki>
+  <src>LightMapper.ms</src>
+  <toolTip></toolTip>
+  <category>MC4</category>
+</data>

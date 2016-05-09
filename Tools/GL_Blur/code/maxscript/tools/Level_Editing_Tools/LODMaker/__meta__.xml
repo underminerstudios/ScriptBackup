@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>LODMaker</wiki>
+  <src>LODMaker.ms</src>
+  <toolTip>Creates LOD for you. You will probably need to adjust the LODs manually</toolTip>
+  <displayName>LOD Maker</displayName>
+  <category>Level_Editing_Tools</category>
+</data>

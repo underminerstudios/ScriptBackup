@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>UVAlignToEdges</wiki>
+  <src>UVAlignToEdges.ms</src>
+  <toolTip>Aligns shells of all the selected edges to either be horizontal or vertical. Script is taken from TexTools and modified to loop through all the edges. 	</toolTip>
+  <displayName>UV Align To Edges</displayName>
+  <category>UV_Tools</category>
+</data>

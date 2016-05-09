@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Multiple DAE exporter</title>
+<link rel="stylesheet" href="../../../ReadMeStyle.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="title">Multiple DAE exporter</div>
+<div id="author">author: Marc Marti - marc.marti@gameloft.com</div>
+
+<b>DESCRIPTION:</b>
+<ul class="info">
+	<li>This script will allow you to export all the selected objects as a separated DAE files inside the selected folder.</li>
+	<li>Quite usefull for massive environment object exportations.</li>
+	<li>IMPORTANT: The objects will be exported with the same name as the are named inside MAX, so, it's imperative to label and name properly all the objects in the scene.</li>
+	<li>IMPORTANT: All the objects should have materials, unless the NO MATERIAL option is enabled.</li>
+</ul>
+<b>OPTIONS:</b>
+<ul class="info">
+	<li>Exportation path: The folder where all the objects will be exported.</li>
+	<li>Set as default: Records the path for future exportations (the memo file is saved in the c:/svn folder, so you need this folder to enable this option.).</li>
+	<li>Prefix: String that will be setted in front of the object name automatically during the exportation.</li>
+	<li>Sufix: String that will be setted at the end of the object name automatically during the exportation.</li>
+</ul>
+<b>ADVANCED OPTIONS:</b>
+<ul class="info">
+	<li>Export Excel prepared LOG: This options saves a report of data of the scene specially formated to be pasted inside an excel file.</li>
+	<li>Export hierarchy as single DAE: Exports all the linked objects as a sigle DAE file.</li>
+	<li>Export NON-MESH objects: The script will be able to export dummies lights and other non-mesh elements of the scene.</li>
+	<li>Export objects with special materials: The script will be able to export collision materials and other clara-specailly formated mats.</li>
+	<li>Export objects with NO-MATERIALS: The objects without material will be exported too.</li>
+</ul>
+<b>INSTRUCTIONS:</b>
+<ul class="info">
+	<li>Select the objects that you want to export.</li>
+	<li>Click the [Export Objects] button.</li>
+</ul>
+<b>KNOWN ISSUES:</b>
+<ul class="info">
+	<li>To avoid material problems in clara is highly recommended transform all the materials to [standard] format before exportation (Vray materials and normalBump slots are not functional in clara)</li>
+</ul>
+</body>
+</html>

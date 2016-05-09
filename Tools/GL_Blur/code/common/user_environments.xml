@@ -1,0 +1,4 @@
+<?xml version='1.0'?>
+<tools_environments version="1.0">
+    <environment default="False" loc="S:/" name="Gameloft" development="False" offline="False"/>
+</tools_environments>

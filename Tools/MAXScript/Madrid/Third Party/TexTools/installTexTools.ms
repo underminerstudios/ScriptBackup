@@ -1,0 +1,1 @@
+filein (pathConfig.removePathLeaf(getSourceFileName()) + "\\TexTools_4.10.mzp")

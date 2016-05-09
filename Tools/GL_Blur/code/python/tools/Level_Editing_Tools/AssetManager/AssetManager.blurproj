@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+<blurproj version="1.0">
+    <config>
+        <section name="Common::Author">
+            <email type="str"/>
+            <company type="str"/>
+            <name type="str"/>
+            <initials type="str"/>
+        </section>
+        <section name="Common::Document">
+            <showEol type="bool" value="False"/>
+            <showIndentations type="bool" value="False"/>
+            <autoComplete type="bool" value="True"/>
+            <limitColumn type="int" value="100"/>
+            <convertEol type="bool" value="False"/>
+            <showLimitColumn type="bool" value="False"/>
+            <tabIndents type="bool" value="True"/>
+            <showLineNumbers type="bool" value="True"/>
+            <openFileMonitor type="bool" value="True"/>
+            <autoCompleteThreshold type="int" value="3"/>
+            <caretLineVisible type="bool" value="False"/>
+            <smartHighlighting type="bool" value="True"/>
+            <tabWidth type="int" value="4"/>
+            <autoIndent type="bool" value="True"/>
+            <showWhitespaces type="bool" value="False"/>
+            <eolMode type="str" value="Auto-Detect"/>
+            <indentationsUseTabs type="bool" value="True"/>
+        </section>
+        <section name="Common::Addons"/>
+        <section name="Project::Settings"/>
+    </config>
+    <envvars/>
+    <syspaths/>
+    <commands>
+        <argumentList type="dict"/>
+        <commandList type="dict"/>
+    </commands>
+    <folder group="True" fileTypes=".py;.pyw;.xml;.ui;.nsi;.bat;.schema;.txt;.blurproj;.ini;.js;.html;.css;.yaml;.sh;.pytempl" name="AssetManager" exclude=".svn" filePath="S:\code\python\tools\Level_Editing_Tools">
+        <folder group="False" fileTypes=".py;.pyw;.xml;.ui;.nsi;.bat;.schema;.txt;.blurproj;.b;.js;.css;.html;.templ;.sh;.yaml;.pp;.ini;.project;.png;.rv;.mu;.pytempl" name="AssetManager" exclude=".svn" filePath="S:\code\python\tools\Level_Editing_Tools\AssetManager"/>
+        <folder group="True" fileTypes=".py;.pyw;.xml;.ui;.nsi;.bat;.schema;.txt;.blurproj;.ini;.js;.html;.css;.yaml;.sh;.pytempl" name="External Resources" exclude=".svn" filePath="S:\code\python\tools\Level_Editing_Tools">
+            <file group="False" fileTypes=".py;.pyw;.xml;.ui;.nsi;.bat;.schema;.txt;.blurproj;.ini;.js;.html;.css;.yaml;.sh;.pytempl" name="fbx.pyd" exclude=".svn" filePath="S:\code\python\lib\fbx\fbx.pyd"/>
+            <file group="False" fileTypes=".py;.pyw;.xml;.ui;.nsi;.bat;.schema;.txt;.blurproj;.ini;.js;.html;.css;.yaml;.sh;.pytempl" name="FbxCommon.py" exclude=".svn" filePath="S:\code\python\lib\fbx\FbxCommon.py"/>
+            <file group="False" fileTypes=".py;.pyw;.xml;.ui;.nsi;.bat;.schema;.txt;.blurproj;.ini;.js;.html;.css;.yaml;.sh;.pytempl" name="sip.pyd" exclude=".svn" filePath="S:\code\python\lib\fbx\sip.pyd"/>
+        </folder>
+    </folder>
+</blurproj>

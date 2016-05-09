@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ResetXForm for Export Read Me</title>
+<link rel="stylesheet" href="../../../ReadMeStyle.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="title">ResetXForm For Export</div>
+<div id="author">author: Gabriel Coriiu (gabriel.coriiu@gameloft.com)</div>
+
+<ul class="info">
+	<li>Checks if two or more objects have the same name</li>
+	<li>Checks if one or more objects have bad faces (surface ~= 0) and select them if any</li>
+	<li>Checks if one or more objects have invalid LOD names</li>
+	<ul>
+		<li style="color:#0f0">*_LODD</li>
+		<li style="color:#0f0">*_LOD00, *_LOD01, *_LOD02,... *_LOD09</li>
+		<li style="color:#f00">*_LOD10, *_LODD01, *_LOD1 etc.</li>
+	</ul>
+	<li>Removes all map channels > 2 and all map channels (-2 to 99) if matchPattern obj.name "*_Collision" (e.g. <i><b>Footprint_Collision</b></i> will have no map channel since is supposed to be collision)</li>
+	<ul>
+		<li><b style="color:#ff0">NOTE: </b><i><b>Footprint_Collision_00</b></i> is NOT treated as collision</li>
+	</ul>
+</ul>
+</body>
+</html>

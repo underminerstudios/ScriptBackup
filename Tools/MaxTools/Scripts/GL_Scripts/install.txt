@@ -1,0 +1,7 @@
+To install the GL Scripts;
+
+1. Enter the folder corresponding to your 3DsMax version
+2. Copy the all the content inside that folder (files & folders).
+3. Paste all that content inside the root of your 3DsMax folder.
+
+ex. C:\Program Files\Autodesk\3ds Max 9\

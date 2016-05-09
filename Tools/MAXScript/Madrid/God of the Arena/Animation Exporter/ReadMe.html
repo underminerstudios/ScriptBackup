@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Camera Merger</title>
+<link rel="stylesheet" href="../../../ReadMeStyle.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+<div id="title">Biped Exporter</div>
+<div id="author">author: Norman Schaar (norman.schaar@gameloft.com)</div>
+
+<ul class="info">
+	<li>This script prepare the bipeds for export.</li>
+<li>Set current slidertime to animation range start.</li>
+
+<li>Delete modifiers of bipeds.</li>
+
+<li>For each biped do...</li>
+
+<li>Determine if biped is attacker or defender by checking the position of the Position Dummies in the world. If Y is +0 then it will need to be rotated.
+<li>Bake down the keys for the legs:</li>
+<ul>
+	<li>Clone the biped</li>
+	<li>Convert to Footsteps keyPerFrame:true flattenToZ:false</li>
+	<li>Select the legs</li>
+	<li>Copy posture</li>
+	<li>Delete the cloned biped</li>
+	<li>Select the original biped</li>
+	<li>Paste the posture of the legs</li>
+</ul>
+<li>Biped control.moveAllMode = ON</li>
+<li>Biped SetTransform position = [0,0,theBiped.transform.pos.z]</li>
+<li>if it needs to be rotated the dummy needs to be rotated with the biped and use the biped as anchor point:</li>
+<ul>
+	<li>The Position Dummy becomes child of the Biped</li>
+	<li>Rotate the biped 180º</li>
+	<li>Break the link of position dummy and biped.</li>
+</ul>
+<li>Collapse Move All Mode of the biped</li>
+<li>Biped control.moveAllMode = OFF</li>
+
+<li>Select the Movement Dummy</li>
+<li>The movement dummy rotation in Z = Biped Rotation in Z</li>
+<li>Add Position Contraint Movemenet Dummy -> Biped keepOffset:true replaceList:false</li>
+<li>Add Orientation Constraint Movement Dummy -> Biped keepOffset:true replaceList:false</li>
+<li>Motion/Trajectories/</li>
+<li>Start time = animationrange.start</li>
+<li>End Time = animationrange.start</li>
+<li>Samples = frames count</li>
+<li>Collapse</li>
+
+<li>Delete Movement Dummy Position.z</li>
+<li>Delete Movement Dummy Rotation.x</li>
+<li>Delete Movement Dummy Rotation.y</li>
+
+<li>Biped inPlaceMode = true</li>
+
+<li>Select Nodes of the layer</li>
+<li>Export</li>
+</ul>
+</body>
+</html>

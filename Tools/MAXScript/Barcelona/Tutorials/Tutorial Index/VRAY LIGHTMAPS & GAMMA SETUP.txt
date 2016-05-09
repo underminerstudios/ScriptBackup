@@ -1,0 +1,13 @@
+[VRAY: LIGHTMAPS & GAMMA SETUP]
+-------------------------------
+There are few steps that you should set BEFORE setting any light in your scene.
+To keep the things simple we will focus on the easiest technique (not the best, but the easiest) to work with proper gamma 2.2 and VRAY.
+
+Before doing anything, go to: [Rendering]->[Gamma/LUT setup], and disable everything.
+
+1) Open the render setup dialog and open the [V-RAY] tab and expand the [V-RAY::Color mapping] rollout.
+2) Set the gamma as 2.2. Maintain checked only the [Linear workflow] and the [Clamp output] options.
+3) If you want to set a more filmic looking set the "Type" as [Reinhard]
+
+Beside this, I recommend you to use [irrandiance map] + [light cache] to bake your lightmaps (specially if they belongs to an indoor scenario).
+For more information about V-Ray render quality setups check the [VRAY: RENDER QUALITY] tutorial.

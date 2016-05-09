@@ -1,0 +1,170 @@
+app.findMenuCommandById(commandName)
+
+File New 2264
+Open Project 3
+Open Recent Projects 2284
+Browse... 3689
+Browse Template Projects... 3692
+Clos 4
+Close Project 3154
+Save 5
+Save As... 6
+Save a Copy... 2166
+Increment and Save 3088
+Revert 7
+Import 2105
+Import Recent Footage 2283
+Export 2494
+Find... 2607
+Find Next 2608
+Add Footage to Comp 2005
+New Comp from Selection... 2796
+Consolidate All Footage 2107
+Remove Unused Footage 2109
+Reduce Project 2735
+Collect Files... 2482
+Watch Folder... 2457
+Create Proxy 2777
+Set Proxy 2106
+Interpret Footage 2102
+Replace Footage 2237
+Reload Footage 2257
+Reveal in Explorer 2562
+Reveal in Bridge 3690
+Project Settings... 2611
+Page Setup... 8
+Print... 9
+Quit 1
+
+Edit
+Undo 16
+Redo 2035
+History 2995
+Cut 18
+Copy 19
+Copy Expression Only 53
+Paste 20
+Clear 21
+Duplicate 2080
+Split Layer 2158
+Lift Work Area 2613
+Extract Work Area 2614
+Select All 23
+Deselect All 2004
+
+Label 2358
+Purge 2370
+Edit Original... 2142
+Edit in Adobe Audition 3697
+Edit in Adobe Sound booth 3761
+Templates 2265
+Preferences 2079
+
+Layer New 2606
+Layer Settings 2021
+Open Layer 2015
+Open So urce Window 2523
+Mask 2040
+Mask and Shape Path 3745
+Quality 2041
+Switches 2053
+Transform 2020
+Time 3155
+Frame Blending 2289
+3D Layer 2541
+Guide Layer 3081
+Add Marker 2157
+Preserve Transparency 2190
+Blen ding Mode 2162
+Next Blending Mode 2781
+Previous Blending Mode 2782
+Track Matte 2269
+Layer Styles 3739
+Bring to Front 2016
+Bring Forward 2018
+Send Backward 2019
+Send to Back 2017
+Adobe Encore 3082
+Create Outlines 2933
+Auto-trace... 3044
+Pre-compose... 2071
+
+Composition
+New Composition... 2000
+Composition Settings... 2007
+Background Color... 2036
+Set Poster Time 2012
+Trim Comp to Work Area 2360
+Crop Comp to Region of Interest 2997
+Add to Render Queue 2161
+Add Output Module 2154
+Preview 2131
+Save Frame As 2233
+Make Movie... 2006
+Pre-render... 2780
+Save RAM Preview... 2125
+Comp Flowchart View 2258
+
+Layer
+New 2606
+Layer Settings... 2021
+Open Layer 2015
+Open Source Window 2523
+Mask 2040
+Mask and Shape Path 3745
+Quality 2041
+Switches 2053
+Transform 2020
+Time 3155
+Frame Blending 2289
+3D Layer 2541
+Guide Layer 3081
+Add Marker 2157
+Preserve Transparency 2190
+Blen ding Mode 2162
+Next Blending Mode 2781
+Previous Blending Mode 2782
+Track Matte 2269
+Layer Styles 3739
+Bring to Front 2016
+Bring Forward 2018
+Send Backward 2019
+Send to Back 2017
+Adobe Encore 3082
+Create Outlines 2933
+Auto-trace... 3044
+Pre-compose... 2071
+
+View
+New Viewer 2039
+Zoom In 2092
+Zoom Out 2093
+Resolution 2037
+Use Display Color Management 3704
+Simulate Output 3703
+Show Rulers 2280
+Show Guides 2274
+Snap to Guides 2286
+Lock Guides 2275
+Clear Guides 2276
+Show Grid 2277
+Snap to Grid 2278
+View Options... 2776
+Show Layer Controls 2435
+Reset 3D View 2642
+Switch 3D View 2625
+Assign 3D View Shortcut 2624
+Switch to Last 3D View 2703
+Look at Selected Layers 2834
+Look at All Layers 2835
+Goto Time... 2076
+
+
+Effect
+Effect Controls 2163
+Last Effect 2452
+Remove All 2072
+
+Window
+Work space 2738
+Assign Workspace Shortcut 3707

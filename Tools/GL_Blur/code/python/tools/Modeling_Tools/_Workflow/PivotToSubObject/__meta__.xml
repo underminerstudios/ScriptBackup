@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>PivotToSubObject</wiki>
+  <src>main.pyw</src>
+  <toolTip>Sets pivot to selected subobjectmode. If subobject not selected moves the pivot to center of object</toolTip>
+  <displayName>Pivot To SubObject</displayName>
+  <category>Workflow</category>
+</data>

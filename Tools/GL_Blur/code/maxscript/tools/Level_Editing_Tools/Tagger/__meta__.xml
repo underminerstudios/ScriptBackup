@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>Tagger</wiki>
+  <src>mc_tagger.ms</src>
+  <toolTip>Tags and untags selected object with a prefix</toolTip>
+  <displayName>MC4 Tagger</displayName>
+  <category>MC4</category>
+</data>

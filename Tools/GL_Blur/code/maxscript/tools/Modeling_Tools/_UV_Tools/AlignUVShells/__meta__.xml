@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data type="Studiomax" version="1.0">
+  <icon>img/icon.png</icon>
+  <wiki>AlingUVShells</wiki>
+  <src>AlignUVShells.ms</src>
+  <toolTip></toolTip>
+  <displayName>Align UV Shells</displayName>
+  <category>UV_Tools</category>
+</data>
