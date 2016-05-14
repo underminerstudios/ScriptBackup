@@ -37,7 +37,10 @@ class MakeBlendshapeNames(object):
         pm.openFile(FiletoClean)
         FiletoClean = FiletoClean.split(".")[0]
         pm.saveAs(FiletoClean + "_clean.ma")
-        pm.select("group1")
+        pm.select("Body_Geo")
+        pm.select("Tongue_Geo", add= True)
+        pm.delete()
+        pm.select("Mesh_Group")
         GroupObjects = pm.listRelatives(c=True)
         GroupName = os.path.split(FiletoClean)[-1]
         pm.polyUnite(GroupObjects, n=GroupName)
@@ -45,6 +48,26 @@ class MakeBlendshapeNames(object):
         pm.runtime.InvertSelection()
         pm.delete()
         pm.saveFile()
+        
+    def exportCleanFiles(self):
+        """Exports clean files to obj"""
+
+        FinalFileList = []
+        FilesToCombine = str(pm.sceneName())
+        FileLocation = os.path.split(FilesToCombine)[0]
+        FilesToCombine = os.listdir(FileLocation)
+         
+        for FileToWorkOn in FilesToCombine:
+            if FileToWorkOn.endswith("clean.ma"):
+                FileToWorkOn = os.path.join(FileLocation,FileToWorkOn)
+                FinalFileList.append(FileToWorkOn)
+        
+        for FinalFile in FinalFileList:
+            pm.openFile(FinalFile)
+            Meshes = pm.ls(type="mesh")
+            pm.select(Meshes)
+            exportLocation = FinalFile.replace("ma","obj")
+            pm.exportSelected(exportLocation,typ="OBJexport")
            
     def CombineFiles(self):
         """Puts all the files togetehr"""
@@ -61,4 +84,3 @@ class MakeBlendshapeNames(object):
 
 Make = MakeBlendshapeNames()
 Make.CombineFiles()    
-    

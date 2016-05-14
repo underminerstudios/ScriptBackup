@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{168c60f2-6ee0-4d5e-b73f-7031b1f8e68d}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile />
+    <SearchPath>C:\Program Files\Autodesk\Maya2015\Python\Lib\site-packages\</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>{4506d510-e4c0-4c4f-8407-e89a244d0ccd}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".metadata\version.ini" />
+    <Content Include="Maya_Tools\.metadata\version.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Maya_Tools\Extras\Grouper.py" />
+    <Compile Include="Maya_Tools\Extras\GroupRecessed.py" />
+    <Compile Include="Maya_Tools\Extras\MakeBlendshapeULSee.py" />
+    <Compile Include="Maya_Tools\Extras\PlanMap.py" />
+    <Compile Include="Maya_Tools\Extras\recessedLights.py" />
+    <Compile Include="Maya_Tools\Extras\removeInstances.py" />
+    <Compile Include="Maya_Tools\Extras\renamer.py" />
+    <Compile Include="Maya_Tools\main_ui.py" />
+    <Compile Include="Maya_Tools\Pipeline\main\Core.py" />
+    <Compile Include="Maya_Tools\Pipeline\main\__init__.py" />
+    <Compile Include="Maya_Tools\Pipeline\media\UI_Converter.py" />
+    <Compile Include="Maya_Tools\Pipeline\media\__init__.py" />
+    <Compile Include="Maya_Tools\Pipeline\submodules\Asset_Prep.py" />
+    <Compile Include="Maya_Tools\Pipeline\submodules\FileFixer.py" />
+    <Compile Include="Maya_Tools\Pipeline\submodules\games_2d\City_Builder_Renderer.py" />
+    <Compile Include="Maya_Tools\Pipeline\submodules\games_2d\Pipeline_Game_2d.py" />
+    <Compile Include="Maya_Tools\Pipeline\submodules\games_2d\__init__.py" />
+    <Compile Include="Maya_Tools\Pipeline\submodules\games_3d\Pipeline_Game_3d.py" />
+    <Compile Include="Maya_Tools\Pipeline\submodules\games_3d\__init__.py" />
+    <Compile Include="Maya_Tools\Pipeline\submodules\__init__.py" />
+    <Compile Include="Maya_Tools\Pipeline\UI\main_ui.py" />
+    <Compile Include="Maya_Tools\Pipeline\UI\Pipeline_Gui.py" />
+    <Compile Include="Maya_Tools\Pipeline\UI\something_bad_happened_popup_UI.py" />
+    <Compile Include="Maya_Tools\Pipeline\UI\__init__.py" />
+    <Compile Include="Maya_Tools\Pipeline\__init__.py" />
+    <Compile Include="Maya_Tools\Pipeline_Gui.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".metadata" />
+    <Folder Include="Maya_Tools" />
+    <Folder Include="Maya_Tools\.metadata" />
+    <Folder Include="Maya_Tools\Extras" />
+    <Folder Include="Maya_Tools\Pipeline" />
+    <Folder Include="Maya_Tools\Pipeline\main" />
+    <Folder Include="Maya_Tools\Pipeline\media" />
+    <Folder Include="Maya_Tools\Pipeline\submodules" />
+    <Folder Include="Maya_Tools\Pipeline\submodules\games_2d" />
+    <Folder Include="Maya_Tools\Pipeline\submodules\games_3d" />
+    <Folder Include="Maya_Tools\Pipeline\UI" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{4506d510-e4c0-4c4f-8407-e89a244d0ccd}\2.7" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>
